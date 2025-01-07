@@ -175,178 +175,196 @@ let Register = (props) => {
     validate();
   };
   return (
-    <div className="row">
-      <div className="col-lg-6 mx-auto">
+    <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
+      <div className="col-lg-11 mx-auto">
         <div className="card border-primary shadow my-2">
           <div className="card-header border-bottom border-primary">
             <h4
-              style={{ fontSize: "40px" }}
-              className="text-primary text-center"
+              style={{ fontSize: "30px", fontWeight: "700" }}
+              className="text-primary text-center my-auto p-3"
             >
-              Register
+              Welcome to Furlenco - Your One Stop Furniture Shop
             </h4>
           </div>
 
-          <div className="card-body border-bottom border-primary">
-            <div className="mb-3 row">
-              <div className="col-lg-4">
-                <label htmlFor="fullName" className="col-form-label">
-                  Full Name
-                </label>
-              </div>
-              <div className="col-lg-8">
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={state.fullName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className="form-control"
-                />
-                <div className="text-danger">
-                  {dirty["fullName"] && errors["fullName"][0]
-                    ? errors["fullName"]
-                    : ""}
+          <div className="card-body  border-primary row">
+            <div className="col-lg-6">
+              <div className="mb-3 row">
+                <div className="col-lg-4">
+                  <label htmlFor="fullName" className="col-form-label">
+                    Full Name
+                  </label>
                 </div>
-              </div>
-            </div>
-            <div className="mb-3 row">
-              <div className="col-lg-4 col-form-label">Email</div>
-              <div className="col-lg-8">
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  value={state.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className="form-control"
-                />
-                <div className="text-danger">
-                  {dirty["email"] && errors["email"][0] ? errors["email"] : ""}
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-3 row">
-              <div className="col-lg-4 ">
-                <label htmlFor="password" className="col-form-label">
-                  Password
-                </label>
-              </div>
-              <div className="col-lg-8">
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={state.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className="form-control"
-                />
-                <div className="text-danger">
-                  {dirty["password"] && errors["password"][0]
-                    ? errors["password"]
-                    : ""}
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-3 row">
-              <div className="col-lg-4">
-                <label htmlFor="gender" className=" col-form-label">
-                  Gender
-                </label>
-              </div>
-              <div className="col-lg-8 mt-2">
-                <div className="form-check form-check-inline">
+                <div className="col-lg-8">
                   <input
-                    type="radio"
-                    name="gender"
-                    id="male"
-                    className="form-check-input"
-                    value="male"
-                    checked={state.gender === "male" ? true : false}
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={state.fullName}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    className="form-control"
                   />
-                  <label htmlFor="male">Male</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="female"
-                    className="form-check-input"
-                    value="female"
-                    checked={state.gender === "female" ? true : false}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  <label htmlFor="female">Female</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="notSay"
-                    className="form-check-input"
-                    value="Prefer not to say"
-                    checked={
-                      state.gender === "Prefer not to say" ? true : false
-                    }
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  <label htmlFor="female">Prefer not to say</label>
-                </div>
-                <div className="text-danger">
-                  {dirty["gender"] && errors["gender"][0]
-                    ? errors["gender"]
-                    : ""}
+                  <div className="text-danger">
+                    {dirty["fullName"] && errors["fullName"][0]
+                      ? errors["fullName"]
+                      : ""}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="mb-3 row">
-              <div className="col-lg-4">
-                <label htmlFor="country" className="col-form-label">
-                  Country
-                </label>
+              <div className="mb-3 row">
+                <div className="col-lg-4 col-form-label">
+                  <label htmlFor="email">Email</label>
+                </div>
+                <div className="col-lg-8">
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    value={state.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className="form-control"
+                  />
+                  <div className="text-danger">
+                    {dirty["email"] && errors["email"][0]
+                      ? errors["email"]
+                      : ""}
+                  </div>
+                </div>
               </div>
-              <div className="col-lg-8">
-                <select
-                  name="country"
-                  id="country"
-                  className="form-select"
-                  value={state.country}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                >
-                  <option value="" selected disabled>
-                    Select a country
-                  </option>
-                  {countries.map((country) => (
-                    <option value={country.countryName} key={country.id}>
-                      {country.countryName}
+
+              <div className="mb-3 row">
+                <div className="col-lg-4 ">
+                  <label htmlFor="password" className="col-form-label">
+                    Password
+                  </label>
+                </div>
+                <div className="col-lg-8">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={state.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className="form-control"
+                  />
+                  <div className="text-danger">
+                    {dirty["password"] && errors["password"][0]
+                      ? errors["password"]
+                      : ""}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-3 row">
+                <div className="col-lg-4">
+                  <label htmlFor="gender" className=" col-form-label">
+                    Gender
+                  </label>
+                </div>
+                <div className="col-lg-8 mt-2">
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      name="gender"
+                      id="male"
+                      className="form-check-input"
+                      value="male"
+                      checked={state.gender === "male" ? true : false}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    <label htmlFor="male">Male</label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      name="gender"
+                      id="female"
+                      className="form-check-input"
+                      value="female"
+                      checked={state.gender === "female" ? true : false}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    <label htmlFor="female">Female</label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      name="gender"
+                      id="notSay"
+                      className="form-check-input"
+                      value="Prefer not to say"
+                      checked={
+                        state.gender === "Prefer not to say" ? true : false
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    <label htmlFor="female">Prefer not to say</label>
+                  </div>
+                  <div className="text-danger">
+                    {dirty["gender"] && errors["gender"][0]
+                      ? errors["gender"]
+                      : ""}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-3 row">
+                <div className="col-lg-4">
+                  <label htmlFor="country" className="col-form-label">
+                    Country
+                  </label>
+                </div>
+                <div className="col-lg-8">
+                  <select
+                    name="country"
+                    id="country"
+                    className="form-select"
+                    value={state.country}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  >
+                    <option value="" selected disabled>
+                      Select a country
                     </option>
-                  ))}
-                </select>
-                <div className="text-danger">
-                  {dirty["country"] && errors["country"][0]
-                    ? errors["country"]
-                    : ""}
+                    {countries.map((country) => (
+                      <option value={country.countryName} key={country.id}>
+                        {country.countryName}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="text-danger">
+                    {dirty["country"] && errors["country"][0]
+                      ? errors["country"]
+                      : ""}
+                  </div>
                 </div>
               </div>
+
+              <div className="row">
+                <a
+                  href="#"
+                  style={{ textDecoration: "none" }}
+                  className="form-text text-primary col-10"
+                >
+                  Already a user? Log in
+                </a>
+                {/* <div className="m-1">{message}</div> */}
+                <button
+                  className="btn btn-outline-primary col-2"
+                  onClick={onRegisterClick}
+                >
+                  Register
+                </button>
+              </div>
             </div>
-            <a href="#" style={{textDecoration: "none"}} className="form-text text-primary">Already a user? Log in</a>
-          </div>
-          <div className="card-footer border-bottom border-primary text-center">
-            <div className="m-1">{message}</div>
-            <button className="btn btn-primary m-2" onClick={onRegisterClick}>
-              Register
-            </button>
+            <img src="./assets/sofa.webp" className="col-lg-6 mx-auto" />
           </div>
         </div>
       </div>
