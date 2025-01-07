@@ -1,0 +1,188 @@
+{
+  "users": [
+    {
+      "username": "sh",
+      "password": "1234",
+      "email": "shreyas@gmail.com",
+      "tel": 9999999991,
+      "id": "8ce6"
+    },
+    {
+      "username": "vp",
+      "password": "1234",
+      "email": "shrey@gmail.com",
+      "tel": 999999999,
+      "id": "85ec"
+    },
+    {
+      "username": "ss",
+      "password": "1234",
+      "email": "shrey@gmail.com",
+      "tel": 9999999991,
+      "id": "d35d"
+    },
+    {
+      "id": "f8bf",
+      "username": "Shreyas",
+      "password": "21234",
+      "email": "sh",
+      "tel": "123"
+    },
+    {
+      "id": "010f",
+      "username": "Vansh",
+      "password": "1234",
+      "email": "vansh@gmail.com",
+      "tel": "-1212"
+    },
+    {
+      "id": "2b16",
+      "username": "Sudhanshu",
+      "password": "12",
+      "email": "sudh@gmail.com",
+      "tel": "99999999"
+    },
+    {
+      "id": "fbca",
+      "username": "Shreyas",
+      "password": "123456",
+      "email": "shrey@gmail.com",
+      "tel": "9321212345"
+    },
+    {
+      "id": "75f1",
+      "username": "As",
+      "password": "",
+      "email": "as@g.com",
+      "tel": "123456781"
+    },
+    {
+      "id": "3e70",
+      "username": "Polia",
+      "password": "",
+      "email": "p@g.com",
+      "tel": "1234567891"
+    },
+    {
+      "id": "8703",
+      "username": "sudh",
+      "password": "123456",
+      "email": "s@g.com",
+      "tel": "1234567891"
+    }
+  ],
+  "cart": [
+    {
+      "id": "14f6",
+      "username": "Vansh",
+      "item": "Table",
+      "price": 4500,
+      "quantity": 1
+    },
+    {
+      "id": "2fa4",
+      "username": "Vansh",
+      "item": "Sofa",
+      "price": 33500,
+      "quantity": 1
+    },
+    {
+      "id": "1f4e",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "81a9",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "34ec",
+      "username": "Vansh",
+      "item": "Sofa",
+      "price": 33500,
+      "quantity": 1
+    },
+    {
+      "id": "4e45",
+      "username": "Vansh",
+      "item": "Table",
+      "price": 4500,
+      "quantity": 1
+    },
+    {
+      "id": "bc89",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "4965",
+      "username": "Vansh",
+      "item": "Sofa",
+      "price": 33500,
+      "quantity": 1
+    },
+    {
+      "id": "d46e",
+      "username": "Vansh",
+      "item": "Sofa",
+      "price": 33500,
+      "quantity": 1
+    },
+    {
+      "id": "7c92",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "68b4",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "8fde",
+      "username": "Vansh",
+      "item": "Sofa",
+      "price": 33500,
+      "quantity": 1
+    },
+    {
+      "id": "f595",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "ea17",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    },
+    {
+      "id": "4418",
+      "username": "Vansh",
+      "item": "Sofa",
+      "price": 33500,
+      "quantity": 1
+    },
+    {
+      "id": "8e34",
+      "username": "Vansh",
+      "item": "Syltherine",
+      "price": 2500,
+      "quantity": 1
+    }
+  ]
+}
