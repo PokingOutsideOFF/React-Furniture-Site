@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Header.css";
+import "../css/Header.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhone, faClock, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -22,7 +24,7 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
             <>
               <li style={{ marginLeft: "2em" }}>
                 <NavLink className="home" to="/dashboard">
-                 Dashboard
+                  Dashboard
                 </NavLink>
               </li>
               <li style={{ marginLeft: "2em" }}>
@@ -40,16 +42,14 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
                   Contact
                 </NavLink>
               </li>
-
-             
               <li className="icon">
                 <NavLink to="/profile">
-                  <i className="fa-solid fa-circle-user fa-lg"></i>
+                  <FontAwesomeIcon icon={faUser} />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/cart">
-                  <i className="fa-solid fa-cart-shopping fa-lg"></i>
+                  <FontAwesomeIcon icon={faCartShopping} />
                 </NavLink>
                 <NavLink
                   to="/cart"

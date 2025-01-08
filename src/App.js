@@ -8,8 +8,9 @@ import Dashboard from "./Components/Dashboard";
 import './css/cart.css'
 import Cart from "./Components/cart";
 import Dash from "./Components/Dash";
-import { UserContext } from "./Context/UserContext";
-import Dashboard from "./Components/Dashboard";
+import AboutUs from "./Components/Contact"
+import "./css/contact.css"
+
 import Header from "./Components/Header"; // Ensure this path is correct
 
 import { UserContext } from "./Context/UserContext";
@@ -49,9 +50,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dash/>} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/contact" element={<AboutUs />} />
           </Routes>
         </div>
       </HashRouter>
