@@ -88,7 +88,7 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
               </li>
               <li>
                 <a
-                  className="hov"
+                  className="hov nav-link"
                   onClick={logout}
                   style={{ cursor: "pointer" }}
                 >
