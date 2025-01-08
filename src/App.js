@@ -37,13 +37,6 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <div className="">
-        {/* <Login />
-        {/* <Checkout /> */}
-        {/* <Register /> */}
-        {/* <Dashboard/> */}
-        {/* <Cart /> */}
-      </div>
       <HashRouter>
         <Header noOfItems={0} logout={logout} isLoggedIn={user.isLoggedIn} />
         <div className="container">

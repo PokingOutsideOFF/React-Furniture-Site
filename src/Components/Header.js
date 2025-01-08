@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Header.css";
+import "../css/Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -11,37 +11,57 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
         to="/dashboard"
         className="navbar-icon d-flex text-decoration-none text-black gap-2"
       >
-        <img src="../assets/logo.png" alt="Furniro" className="head-icon" />
-        <span className="h2 fw-bold" style={{ letterSpacing: "1.5px" }}>
-          Furlenco
-        </span>
+        <div style={{ position: "absolute", left: 30, top: 30 }}>
+          <img src="../assets/logo.png" alt="Furniro" className="head-icon" />
+          <span
+            className="h2 fw-bold"
+            style={{ letterSpacing: "1.5px", position: "absolute" }}
+          >
+            Furlenco
+          </span>
+        </div>
       </NavLink>
       <nav>
         <ul className="sub-head">
           {isLoggedIn ? (
             <>
               <li style={{ marginLeft: "2em" }}>
-                <NavLink className="home" to="/dashboard">
-                 Dashboard
+                <NavLink
+                  className="home nav-link"
+                  to="/dashboard"
+                  activeClassName="active"
+                >
+                  Dashboard
                 </NavLink>
               </li>
               <li style={{ marginLeft: "2em" }}>
-                <NavLink className="hov" to="/shop">
+                <NavLink
+                  className="hov nav-link"
+                  to="/shop"
+                  activeClassName="active"
+                >
                   Shop
                 </NavLink>
               </li>
               <li style={{ marginLeft: "2em" }}>
-                <NavLink className="hov" to="/about">
+                <NavLink
+                  className="hov nav-link"
+                  to="/about"
+                  activeClassName="active"
+                >
                   About
                 </NavLink>
               </li>
               <li style={{ marginLeft: "2em", marginRight: "8em" }}>
-                <NavLink className="hov" to="/contact">
+                <NavLink
+                  className="hov nav-link"
+                  to="/contact"
+                  activeClassName="active"
+                >
                   Contact
                 </NavLink>
               </li>
 
-             
               <li className="icon">
                 <NavLink to="/profile">
                   <i className="fa-solid fa-circle-user fa-lg"></i>
@@ -72,12 +92,20 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
           ) : (
             <>
               <li>
-                <NavLink className="hov" to="/">
+                <NavLink
+                  className="hov nav-link"
+                  to="/"
+                  activeClassName="active"
+                >
                   Login
                 </NavLink>
               </li>
               <li>
-                <NavLink className="hov" to="/register">
+                <NavLink
+                  className="hov nav-link"
+                  to="/register"
+                  activeClassName="active"
+                >
                   Register
                 </NavLink>
               </li>
