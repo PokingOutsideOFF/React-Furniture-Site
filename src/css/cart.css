@@ -3,8 +3,11 @@ body {
     margin: 0;
     /* padding: 0.2%; */
     background-color: #f8f8f8;
+    
     width: 99.5%;
     overflow-x: hidden;
+    /* background-color: black; */
+
 
     /* justify-items: center;
     justify-content: center;
@@ -64,7 +67,7 @@ nav ul li {
 
 /* CART SECTION */
 .cart-section-outer{
-    /* width: 90%; */
+    width: 90%;
     margin: 3em;
     justify-items: center;
 }
