@@ -3,10 +3,11 @@ import "../css/dashboard.css";
 import Products from "./Products";
 import DashboardVideo from "./DashboardVideo";
 import { UserContext } from "../Context/UserContext";
+import Footer from "./Footer";
 
 function Dash(props) {
   let userContext = useContext(UserContext);
-  
+
   return (
     <div
       className="container-fluid mx-auto"
@@ -38,7 +39,7 @@ function Dash(props) {
         ></button>
       </div>
 
-      <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} /> 
+      <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} />
       <div
         className="p-5 position-absolute w-50 h-1000 z-1 rounded-2 d-flex flex-column"
         style={{ top: "150%", right: "5%", backgroundColor: "#fff3e3" }}
@@ -221,6 +222,7 @@ function Dash(props) {
       <Products />
       <DashboardVideo />
       {/* Video */}
+      <Footer></Footer>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../css/Checkout.css"
+import "../css/Checkout.css";
+import Footer from "./Footer";
 
 function Checkout() {
   const [cart, setCart] = useState([]);
@@ -266,6 +267,7 @@ function Checkout() {
           <p>Dedicated support</p>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
