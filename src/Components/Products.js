@@ -61,7 +61,7 @@ function Products(props) {
   };
 
   return (
-<div>
+<div style={{ paddingTop: '60px' }}>
       <div className="container-fluid mt-5">
         <div className="row border-danger justify-content-evenly mb-5">
           {products.map((product) => (

@@ -1,13 +1,18 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faPhone, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkerAlt,
+  faPhone,
+  faClock,
+  faShieldAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
   return (
-    <div className=' m-auto'>
+    <div className=" m-auto" style={{ paddingTop: "60px" }}>
       {/* Contact Header */}
-      <section id="contact" >
+      <section id="contact">
         <div className="container-fluid contact-h pt-4">
           <h1>Contact</h1>
         </div>
@@ -20,9 +25,11 @@ const Contact = () => {
           <div className="col-md-12 contact-info1">
             <h2>Get In Touch With Us</h2>
             <p>
-              For More Information About Our Product & Services. Please Feel Free To Drop Us
+              For More Information About Our Product & Services. Please Feel
+              Free To Drop Us
               <br />
-              An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
+              An Email. Our Staff Always Be There To Help You Out. Do Not
+              Hesitate!
             </p>
           </div>
         </div>

@@ -15,7 +15,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/cart.css";
 import Shop from "./Components/Shop";
-import Contact from "./Components/Contact";
 
 function App() {
   const [user, setUser] = useState({

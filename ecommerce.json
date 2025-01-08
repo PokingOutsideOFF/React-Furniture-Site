@@ -125,6 +125,28 @@
       "productId": 4,
       "quantity": 1,
       "isPaymentCompleted": false
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": 4
     }
   ]
 }

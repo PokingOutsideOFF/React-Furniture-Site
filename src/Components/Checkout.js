@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/checkout.css";
+import "../css/Checkout.css";
 import Footer from "./Footer";
 
 function Checkout() {
@@ -28,7 +28,7 @@ function Checkout() {
   };
 
   return (
-    <div>
+    <div style={{ paddingTop: '60px' }}>
       <div className="banner-container w-100">
         <img
           src="./assets/img/checkout.png"

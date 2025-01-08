@@ -12,7 +12,7 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
   let cartContext = useContext(CartContext)
   
   return (
-    <header className="d-flex justify-content-center">
+    <header className="d-flex justify-content-center" >
       <NavLink
         to="/dashboard"
         className="navbar-icon d-flex text-decoration-none text-black gap-2"

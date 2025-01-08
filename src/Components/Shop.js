@@ -4,7 +4,8 @@ import Products from "./Products";
 
 function Shop() {
   return (
-    <div class="container-fluid">
+
+    <div class="container-fluid" style={{ paddingTop: "60px" }}>
       <div class="rect mb-3">
         <img
           src="./assets/img/shop_head.png"
