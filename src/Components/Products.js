@@ -61,8 +61,8 @@ function Products(props) {
   };
 
   return (
-    <div>
-      <div className="container mt-5">
+<div>
+      <div className="container-fluid mt-5">
         <div className="row border-danger justify-content-evenly mb-5">
           {products.map((product) => (
             <div className="col-md-4 mb-4" key={product.id}>

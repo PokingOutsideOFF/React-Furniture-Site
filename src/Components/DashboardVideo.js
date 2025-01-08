@@ -3,13 +3,13 @@ import React from "react";
 
 function DashboardVideo(props) {
   return (
-    <div>
+    <div class="">
       <div
         style={{
           backgroundColor: "#ddcfb5",
           borderTopLeftRadius: "200px",
           borderTopRightRadius: "200px",
-          marginTop: "2000px"
+          
         }}
       >
         <div className="d-flex flex-column justify-content-center align-items-center ">

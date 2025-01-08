@@ -218,9 +218,14 @@ function Dash(props) {
           <h5 className="h5 fw-bold m-0">Our Products</h5>
         </div>
       </div>
+        <div class="container-fluid">
 
       <Products />
+        </div>
+        <div class="container-fluid">
+          
       <DashboardVideo />
+        </div>
       {/* Video */}
       <Footer></Footer>
     </div>
