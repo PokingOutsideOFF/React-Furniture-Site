@@ -238,7 +238,7 @@ function Dashboard(props) {
           borderTopRightRadius: '200px',
         }}
       >
-        <div class="d-flex flex-column justify-content-center align-items-center">
+        {/* <div class="d-flex flex-column justify-content-center align-items-center">
           <p
             class="fs-6 fw-semibold text-secondary"
             style={{ marginTop: '50px', marginBottom: '0px' }}
@@ -258,7 +258,7 @@ function Dashboard(props) {
             muted
             style={{ borderTopLeftRadius: '150px', borderTopRightRadius: '150px' }}
           ></video>
-        </div>
+        </div> */}
 
         {/* Testimonials */}
         <section class="container">
@@ -281,7 +281,7 @@ function Dashboard(props) {
             <div class="col-md-4 mb-5 mb-md-0">
               <div class="d-flex justify-content-center mb-4">
                 <img
-                  src="https://mdbcdn.b-cdn.net/./assets/img/Photos/Avatars/img%20(1).webp"
+                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
                   class="rounded-circle shadow-1-strong"
                   width="150"
                   height="150"
@@ -306,7 +306,7 @@ function Dashboard(props) {
             <div class="col-md-4 mb-5 mb-md-0">
               <div class="d-flex justify-content-center mb-4">
                 <img
-                  src="https://mdbcdn.b-cdn.net/./assets/img/Photos/Avatars/img%20(2).webp"
+                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
                   class="rounded-circle shadow-1-strong"
                   width="150"
                   height="150"
@@ -331,7 +331,7 @@ function Dashboard(props) {
             <div class="col-md-4 mb-0">
               <div class="d-flex justify-content-center mb-4">
                 <img
-                  src="https://mdbcdn.b-cdn.net/./assets/img/Photos/Avatars/img%20(9).webp"
+                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
                   class="rounded-circle shadow-1-strong"
                   width="150"
                   height="150"
