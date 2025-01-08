@@ -33,7 +33,7 @@ function Products(props) {
             <div className="col-md-4 mb-4" key={product.id}>
               <div className="card overflow-hidden position-relative product-card" style={{ width: "100%", border: "none" }}>
                 <div className="overflow-hidden">
-                  <img src={product.image} className="card-img-top" alt={product.productName} />
+                  <img src={product.image} className="card-img-top" alt={product.productName} height={300} />
                 </div>
                 <div className="card-body bg-body-secondary" style={{ letterSpacing: "1px" }}>
                   <h6 className="fw-semibold h6 m-0 mb-2">{product.productName}</h6>
