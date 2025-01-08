@@ -1,7 +1,10 @@
 import React, { use } from 'react';
 import { useEffect, useState } from 'react';
+import { UserContext } from '../Context/UserContext';
 
 function Cart() {
+
+  const [id,setID]=useState(1)
 
     const [cart,setCart] = useState([])
     const [total,setTotal] = useState(0)
@@ -15,39 +18,41 @@ function Cart() {
       });
       setTotal(totalAmount);
     }, [cart]);
-    
-    useEffect(() => {
-        const fetchData = async () => {
-        var id =1
-        // add userid here using useContext in place of userId:${id}
-        var response = await fetch(`http://localhost:5000/orders?userId=${id}`,{method:"GET"})
-        var body = await response.json()
-            setCart(body);
-
-        var response2 = await fetch(`http://localhost:5000/products`,{method:"GET"})
-        var body2 = await response2.json()
-
-        let vansh = body
-       
-        console.log(vansh)
+    const fetchData = async () => {
         
+      // add userid here using useContext in place of userId:${id}
+      var response = await fetch(`http://localhost:5000/orders?userId=${id}`,{method:"GET"})
+      var body = await response.json()
+          setCart(body);
+
+      var response2 = await fetch(`http://localhost:5000/products`,{method:"GET"})
+      var body2 = await response2.json()
+
+      let vansh = body
+     
+      console.log(vansh)
+      
 
 
 
-            Object.keys(body2).forEach((i)=>{
-              Object.keys(body).forEach((order) => {
-                
-                if (body[order].productId == body2[i].id) {
-                  vansh[order].product = body2[i];
-                }
-                
-              });
-            })
-            setCart(vansh)
-            console.log(cart)
-        };
+          Object.keys(body2).forEach((i)=>{
+            Object.keys(body).forEach((order) => {
+              
+              if (body[order].productId == body2[i].id) {
+                vansh[order].product = body2[i];
+              }
+              
+            });
+          })
+          setCart(vansh)
+          console.log(cart)
+    };
+    useEffect(() => {
+      
         fetchData();
     }, []);
+
+    // useEffect([cart])
 
     let onIncrement=(product,max)=>{
         let allProducts = [...cart];
@@ -68,14 +73,24 @@ function Cart() {
         }
     }
 
-    let onDelete=(product)=>{
+    let onDelete= async (ids) => {
+      
         let allProducts = [...cart];
-        let index = allProducts.indexOf(product);
+        let index = allProducts.indexOf(ids);
         if(window.confirm("sure?")){
-            allProducts.splice(index,1);
-        setCart(allProducts)
+          var response3 = await fetch(`http://localhost:5000/orders/${ids}`,{method:"DELETE"})
+          if (response3.ok) {
+            var body = await response3.json();
+            console.log(body);
+            setCart(body);
+          } else {
+            console.error('Failed to delete the item');
+            // allProducts.splice(index,1);
+            // setCart(allProducts)
+          }
+            
+        // setCart(allProducts)
         }
-
     }
 
 
@@ -108,11 +123,11 @@ function Cart() {
                         return(
                             <tr class="text-center">
 
-                                <td>{p.productId}</td>
+                                <td>{p.product ? p.product.productName:"N/A"}</td>
                                 <td>{p.product ? p.product.price : 'N/A'}</td>
                                 <td ><i class="fa-solid fa-circle-minus" onClick={()=>{onIncrement(p,10)}} style={{color:'#e6a400', border:'none', cursor: 'pointer'}}>+</i>{p.quantity} <i class="fa-solid fa-circle-plus" onClick={()=>{onDecrement(p,0)}} style={{color:'#e6a400', border:'none',cursor: 'pointer'}}>-</i></td>
                                 <td>{p.product ? p.product.price*p.quantity : 'N/A'}</td>
-                                <td><button class="fa-solid fa-trash" onClick={()=>onDelete(p)} className="btn btn-outline-danger" style={{cursor: 'pointer'}}>Delete</button></td>
+                                <td><button class="fa-solid fa-trash" onClick={()=>onDelete(p.id)} className="btn btn-outline-danger" style={{cursor: 'pointer'}}>Delete</button></td>
                 
                             </tr>
                         );
@@ -130,10 +145,10 @@ function Cart() {
               Subtotal: <span class="total-amount">₹{total}</span>
             </p>
             <p class="Subtotal">
-              Tax: <span class="total-amount">₹{0.15*total}</span>
+              Tax: <span class="total-amount">₹{Math.round(0.15*total)}</span>
             </p>
             <p style={{fontSize: '1.2em', fontWeight: 'bold'}}>
-              Total: <span class="total-amount">₹{(total * 1.15).toFixed(2)}</span>
+              Total: <span class="total-amount">₹{Math.round(total * 1.15)}</span>
             </p>
             <button class="checkout-btn" href="checkout">
               <a href="checkout"> Check Out</a>

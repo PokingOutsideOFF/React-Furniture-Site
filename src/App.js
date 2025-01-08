@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   HashRouter,
@@ -37,13 +36,6 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <div className="">
-        {/* <Login />
-        {/* <Checkout /> */}
-        {/* <Register /> */}
-        {/* <Dashboard/> */}
-        {/* <Cart /> */}
-      </div>
       <HashRouter>
         <Header noOfItems={0} logout={logout} isLoggedIn={user.isLoggedIn} />
         <div className="container">
