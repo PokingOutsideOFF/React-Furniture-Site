@@ -11,7 +11,7 @@ import Dash from "./Components/Dash";
 import { UserContext } from "./Context/UserContext";
 import Dashboard from "./Components/Dashboard";
 import Header from "./Components/Header"; // Ensure this path is correct
-import Cart from "./Components/Cart";
+
 import { UserContext } from "./Context/UserContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -41,7 +41,6 @@ function App() {
         {/* <Checkout /> */}
         {/* <Register /> */}
         {/* <Dashboard/> */}
-        <Dash></Dash>
         {/* <Cart /> */}
       </div>
       <HashRouter>
