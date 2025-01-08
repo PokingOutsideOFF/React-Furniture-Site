@@ -1,4 +1,4 @@
-import "../css/checkout.css";
+import "../css/Checkout.css";
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Context/UserContext";
 import "../css/Checkout.css";
