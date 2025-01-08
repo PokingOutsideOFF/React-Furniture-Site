@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -9,7 +10,7 @@ function Footer() {
           <div className="footer w-100">
             <div className="footer-content">
               <div className="section">
-                <h3 style={{ fontWeight: "bolder" }}>Funiro.</h3>
+                <h3 style={{ fontWeight: "bolder" }}>Furlenco</h3>
                 <p>
                   400 University Drive Suite <br />
                   Coral Gables <br />
@@ -19,16 +20,13 @@ function Footer() {
               <div className="section">
                 <h3>LINKS</h3>
                 <p>
-                  <a href="home.html"> Home </a>
+                  <Link to="/dashboard"> Home </Link>
                 </p>
                 <p>
-                  <a href="#"> Shop </a>
+                  <Link href="/shop"> Shop </Link>
                 </p>
                 <p>
-                  <a href="#"> About </a>
-                </p>
-                <p>
-                  <a href="#"> Contact </a>
+                  <Link href="/contact"> Contact </Link>
                 </p>
               </div>
               <div className="section">
@@ -54,7 +52,7 @@ function Footer() {
       </section>
 
       <section className="footer">
-        <hr className="footer-hr" />
+        <hr />
         <p style={{ textAlign: "center" }} className="footer-text">
           2025 Funiro. All rights reserved
         </p>

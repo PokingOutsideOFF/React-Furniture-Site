@@ -23,7 +23,7 @@ function DashboardVideo(props) {
             className="h2 m-0 fw-bold fst mb-3"
             style={{ letterSpacing: "1px" }}
           >
-            #FuniroFurniture
+            #FurlencoFurniture
           </h3>
         </div>
         <div className="d-flex justify-content-center">
@@ -37,6 +37,7 @@ function DashboardVideo(props) {
               borderTopLeftRadius: "150px",
               borderTopRightRadius: "150px",
             }}
+            width={1200}
           ></video>
         </div>
         <section className="container-fluid">

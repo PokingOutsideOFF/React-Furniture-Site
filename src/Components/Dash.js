@@ -1,33 +1,42 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../css/dashboard.css";
 import Products from "./Products";
 import DashboardVideo from "./DashboardVideo";
 import { UserContext } from "../Context/UserContext";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Dash(props) {
   let userContext = useContext(UserContext);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleAddToCart = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  };
 
   return (
     <div
       className="container-fluid mx-auto"
       style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "60px" }}
     >
-      {/* <div
-        id="alertContainer"
-        className="alert alert-success fade show w-25 text-center"
-        role="alert"
-        style={{
-          display: "none",
-          position: "fixed",
-          top: "10px",
-          left: "40%",
-          width: "100%",
-          zIndex: 1050,
-        }}
-      >
-        Item added to cart successfully!
-      </div> */}
+      {showAlert && (
+        <div
+          id="alertContainer"
+          className="alert alert-success fade show w-25 text-center"
+          role="alert"
+          style={{
+            position: "fixed",
+            top: "10px",
+            left: "40%",
+            zIndex: 1050,
+          }}
+        >
+          Item added to cart successfully!
+        </div>
+      )}
 
       <div className="alert alert-warning alert-dismissible fade show">
         Welcome, {userContext.user.currentUserName}! 👋
@@ -41,7 +50,7 @@ function Dash(props) {
       <div className="position-static">
         <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} />
         <div
-          className="p-5 mt-5  position-absolute w-50 h-1000 z-1 rounded-2 d-flex flex-column"
+          className="p-5 mt-5 position-absolute w-50 h-1000 z-1 rounded-2 d-flex flex-column"
           style={{ top: "150%", right: "5%", backgroundColor: "#fff3e3" }}
         >
           <h5 className="fs-6" style={{ letterSpacing: "2px" }}>
@@ -53,18 +62,17 @@ function Dash(props) {
           <h3 className="h1 fw-bold" style={{ color: "#b98e2f" }}>
             New Collection
           </h3>
-
           <p className="fw-semibold" style={{ fontSize: "small" }}>
             Transform your space with stylish, affordable furniture from our
-            online store <br />- " where comfort meets design at your fingertips
-            "
+            online store <br />- " where comfort meets design at your
+            fingertips"
           </p>
-          <a
-            href="shop"
+          <Link
+            to="/shop"
             className="mt-2 px-5 py-3 text-decoration-none fw-semibold hero-buy-btn"
           >
             BUY NOW
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -105,7 +113,7 @@ function Dash(props) {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <div className="card-wrapper  d-flex justify-content-around">
+            <div className="card-wrapper d-flex justify-content-around">
               <div
                 className="card overflow-hidden"
                 style={{ width: "14rem", border: "none" }}
@@ -160,7 +168,7 @@ function Dash(props) {
             </div>
           </div>
           <div className="carousel-item">
-            <div className="card-wrapper  d-flex justify-content-around">
+            <div className="card-wrapper d-flex justify-content-around">
               <div
                 className="card overflow-hidden"
                 style={{ width: "14rem", border: "none" }}
@@ -215,18 +223,20 @@ function Dash(props) {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-5 d-flex flex-column justify-content-center align-items-center">
-          <h5 className="h5 fw-bold m-0">Our Products</h5>
-        </div>
+      <div className="mt-5 d-flex flex-column justify-content-center align-items-center">
+        <h5 className="h5 fw-bold m-0">Our Products</h5>
       </div>
-      <div class="container-fluid">
-        <Products />
+
+      <div className="container-fluid">
+        <Products onAddToCart={handleAddToCart} />
       </div>
-      <div class="container-fluid">
+
+      <div className="container-fluid">
         <DashboardVideo />
       </div>
-      {/* Video */}
+
       <Footer></Footer>
     </div>
   );

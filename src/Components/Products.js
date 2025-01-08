@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../css/dashboard.css";
 import { UserContext } from "../Context/UserContext";
 
-function Products(props) {
+function Products({ onAddToCart }) {
   const [products, setProducts] = useState([]); // Initialize state as an empty array
   let userContext = useContext(UserContext);
 
@@ -55,13 +55,15 @@ function Products(props) {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      // Call the onAddToCart function to show the alert
+      onAddToCart();
     } catch (error) {
       console.error("There is an error", error);
     }
   };
 
   return (
-<div style={{ paddingTop: '60px' }}>
+    <div style={{ paddingTop: "60px" }}>
       <div className="container-fluid mt-5">
         <div className="row border-danger justify-content-evenly mb-5">
           {products.map((product) => (
@@ -75,6 +77,7 @@ function Products(props) {
                     src={product.image}
                     className="card-img-top"
                     alt={product.productName}
+                    height={300}
                   />
                 </div>
                 <div

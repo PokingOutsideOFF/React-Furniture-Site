@@ -1,26 +1,22 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./Footer.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapMarkerAlt,
-  faPhone,
-  faClock,
-  faShieldAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhone, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import Footer from './Footer';
 
 const Contact = () => {
   return (
-    <div className=" m-auto" style={{ paddingTop: "60px" }}>
+    <div className='container-fluid'>
       {/* Contact Header */}
-      <section id="contact">
-        <div className="container-fluid contact-h pt-4">
-          <h1>Contact</h1>
+      <section id="contact" >
+        <div className=" contact-h pt-4 bgimage">
+          <h1 className='text-center'>Contact</h1>
         </div>
       </section>
 
       {/* Contact Section */}
-      <div className="contact-sec container">
+      <div className="contact-sec">
         <div className="row">
           {/* Contact Info */}
           <div className="col-md-12 contact-info1">
@@ -66,7 +62,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="col-md-6 ml-auto">
+          <div className="col-md-6 mb-5">
             <form className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
@@ -111,12 +107,13 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-block">
+              <button type="submit" className="btn btn-outline-warning">
                 Submit
               </button>
             </form>
           </div>
         </div>
+        <Footer></Footer>
       </div>
      
     </div>

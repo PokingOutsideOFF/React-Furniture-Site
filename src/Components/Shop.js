@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/shop.css";
 import Products from "./Products";
+import Footer from "./Footer";
 
 function Shop() {
   return (
@@ -93,6 +94,7 @@ function Shop() {
             </div>
           </div>
         </div>
+        <Footer></Footer>
       </div>
     // </div>
   );
