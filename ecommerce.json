@@ -12,7 +12,6 @@
       "category": "Sofa",
       "price": 16499
     },
-
     {
       "id": 3,
       "productName": "Sofa Set",
@@ -92,6 +91,14 @@
       "country": "Japan",
       "receiveNewsLetters": false,
       "id": 3
+    },
+    {
+      "email": "s@s.com",
+      "password": "Shreyas2011",
+      "fullName": "Shreyas",
+      "gender": "male",
+      "country": "India",
+      "id": 4
     }
   ],
   "orders": [
@@ -99,14 +106,14 @@
       "id": 1,
       "userId": 1,
       "productId": 1,
-      "quantity": 2,
+      "quantity": 1,
       "isPaymentCompleted": true
     },
     {
       "id": 2,
       "userId": 1,
       "productId": 3,
-      "quantity": 10,
+      "quantity": 1,
       "isPaymentCompleted": true
     },
     {
@@ -115,48 +122,6 @@
       "productId": 4,
       "quantity": 1,
       "isPaymentCompleted": false
-    },
-    {
-      "id": "14f6",
-      "username": "Vansh",
-      "item": "Table",
-      "price": 4500,
-      "quantity": 1
-    },
-    {
-      "id": "2fa4",
-      "username": "Vansh",
-      "item": "Sofa",
-      "price": 33500,
-      "quantity": 1
-    },
-    {
-      "id": "1f4e",
-      "username": "Vansh",
-      "item": "Syltherine",
-      "price": 2500,
-      "quantity": 1
-    },
-    {
-      "id": "81a9",
-      "username": "Vansh",
-      "item": "Syltherine",
-      "price": 2500,
-      "quantity": 1
-    },
-    {
-      "id": "34ec",
-      "username": "Vansh",
-      "item": "Sofa",
-      "price": 33500,
-      "quantity": 1
-    },
-    {
-      "id": "4e45",
-      "username": "Vansh",
-      "item": "Table",
-      "price": 4500,
-      "quantity": 1
     }
   ]
 }

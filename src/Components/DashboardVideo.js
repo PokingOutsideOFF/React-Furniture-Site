@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/dashboard.css";
+// import "../css/dashboard.css";
 
 function DashboardVideo(props) {
   return (
@@ -30,7 +30,7 @@ function DashboardVideo(props) {
           <video
             className="mb-5"
             src="/assets/img/furniture-video.mp4"
-            autoplay
+            autoPlay
             loop
             muted
             style={{
@@ -39,7 +39,7 @@ function DashboardVideo(props) {
             }}
           ></video>
         </div>
-        <section className="container">
+        <section className="container-fluid">
           <div className="d-flex justify-content-center align-items-center gap-3 mb-5">
             <h3
               className=""
@@ -143,7 +143,8 @@ function DashboardVideo(props) {
               </p>
               <ul className="list-unstyled d-flex justify-content-center mb-0">
                 <li>
-                  <i className="fa-solid fa-star fa-sm text-warning"></i>
+                  {/* <i className="fa-solid fa-star fa-sm text-warning"></i> */}
+                  <i class="fa-solid fa-star"></i>
                 </li>
                 <li>
                   <i className="fa-solid fa-star fa-sm text-warning"></i>

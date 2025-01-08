@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
+import { Link } from "react-router-dom";
 let Login = () => {
   const [email, setEmail] = useState("scott@test.com");
   const [password, setPassword] = useState("Scott123");
@@ -103,13 +104,13 @@ let Login = () => {
   return (
     <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
       <div className="col-lg-11 mx-auto ">
-        <div className="card border-success shadow-lg my-2">
-          <div className="card-header border-bottom border-success">
+        <div className="card border-warning shadow-lg my-2">
+          <div className="card-header border-bottom border-warning bg-light">
             <h4
-              style={{ fontSize: "30px", fontWeight: 700}}
-              className="text-success text-center my-auto p-3"
+              style={{ fontSize: "30px", fontWeight: 700 }}
+              className="text-dark text-center my-auto p-3"
             >
-              Welcome to Furlenco - Your One Stop Furniture Shop
+              Welcome to Furlenco - Furniture Shop
             </h4>
           </div>
 
@@ -164,15 +165,15 @@ let Login = () => {
                 </div>
               </div>
               <div className="row">
-                <a
-                  href="#"
+                <Link
+                  to={"/register"}
                   style={{ textDecoration: "none" }}
                   className="form-text text-primary col-10"
                 >
                   New user? Create Account
-                </a>
+                </Link>
                 <button
-                  className="btn btn-outline-success  col-2" 
+                  className="btn btn-outline-success  col-2"
                   onClick={onLoginClick}
                 >
                   Login
