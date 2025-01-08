@@ -67,21 +67,12 @@ nav ul li {
     background-color: #b98e2f;
     height: 3px;
     width: 0;
-<<<<<<< HEAD
-    left: 1rem;
-=======
     left: 0;
->>>>>>> abaa5c5e5c0606cc11904b560e0d222d5e361097
     bottom: -2px;
     
     
 }
 .hov:hover:after,.home:hover:after {
-<<<<<<< HEAD
-    width: 78%;
-    transition: 0.4s;
-}
-=======
     width: 100%;
     transition: 0.4s;
 }
@@ -89,4 +80,3 @@ nav ul li {
 .nav-link.active{
     border-bottom: 3px solid #b98e2f;
   }
->>>>>>> abaa5c5e5c0606cc11904b560e0d222d5e361097

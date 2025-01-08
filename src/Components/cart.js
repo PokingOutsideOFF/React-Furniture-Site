@@ -108,7 +108,7 @@ function Cart() {
                         return(
                             <tr class="text-center">
 
-                                <td>{p.productId}</td>
+                                <td>{p.product?p.product.productName:'N/A'}</td>
                                 <td>{p.product ? p.product.price : 'N/A'}</td>
                                 <td ><i class="fa-solid fa-circle-minus" onClick={()=>{onIncrement(p,10)}} style={{color:'#e6a400', border:'none', cursor: 'pointer'}}>+</i>{p.quantity} <i class="fa-solid fa-circle-plus" onClick={()=>{onDecrement(p,0)}} style={{color:'#e6a400', border:'none',cursor: 'pointer'}}>-</i></td>
                                 <td>{p.product ? p.product.price*p.quantity : 'N/A'}</td>

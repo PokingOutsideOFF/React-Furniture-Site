@@ -11,17 +11,13 @@ import Checkout from "./Components/Checkout"; // Adjust the path as necessary
 import Register from "./Components/Register";
 import Cart from "./Components/cart";
 import Dash from "./Components/Dash";
-<<<<<<< HEAD
-import AboutUs from "./Components/Contact"
-import "./css/contact.css"
-
-=======
+import "./css/contact.css";
 import { UserContext } from "./Context/UserContext";
->>>>>>> abaa5c5e5c0606cc11904b560e0d222d5e361097
 import Header from "./Components/Header"; // Ensure this path is correct
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./css/cart.css"
+import "./css/cart.css";
+import  Contact  from "./Components/Contact"
 
 function App() {
   let [user, setUser] = useState({
@@ -49,14 +45,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-<<<<<<< HEAD
-            <Route path="/dashboard" element={<Dash/>} />
-=======
             <Route path="/dashboard" element={<Dash />} />
->>>>>>> abaa5c5e5c0606cc11904b560e0d222d5e361097
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/contact" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact/>} />
           </Routes>
         </div>
       </HashRouter>
