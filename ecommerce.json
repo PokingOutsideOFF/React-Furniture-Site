@@ -1,61 +1,61 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "productName": "Cushion Chair",
       "category": "Chair",
       "price": 7499
     },
     {
-      "id": 2,
+      "id": "2",
       "productName": "Long Sofa",
       "category": "Sofa",
       "price": 16499
     },
     {
-      "id": 3,
+      "id": "3",
       "productName": "Sofa Set",
       "category": "Sofa",
       "price": 21999
     },
     {
-      "id": 4,
+      "id": "4",
       "productName": "Recliner",
       "category": "Chair",
       "price": 11999
     },
     {
-      "id": 5,
+      "id": "5",
       "productName": "King Sized Bed",
       "category": "Bed",
       "price": 29999
     },
     {
-      "id": 6,
+      "id": "6",
       "productName": "Queen Sized bed",
       "category": "Bed",
       "price": 27999
     },
     {
-      "id": 7,
+      "id": "7",
       "productName": "Dining Table",
       "category": "Table",
       "price": 18499
     },
     {
-      "id": 8,
+      "id": "8",
       "productName": "Study Table",
       "category": "Table",
       "price": 9999
     },
     {
-      "id": 9,
+      "id": "9",
       "productName": "Single Bed",
       "category": "Bed",
       "price": 9999
     },
     {
-      "id": 10,
+      "id": "10",
       "productName": "Night Stand",
       "category": "Table",
       "price": 1499
@@ -63,7 +63,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "scott@test.com",
       "password": "Scott123",
       "fullName": "Scott",
@@ -80,7 +80,7 @@
       "gender": "male",
       "country": "UK",
       "receiveNewsLetters": true,
-      "id": 2
+      "id": "2"
     },
     {
       "email": "v@v.c",
@@ -117,7 +117,7 @@
       "isPaymentCompleted": true
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "productId": 4,
       "quantity": 1,
