@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./Footer.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarkerAlt,
@@ -40,18 +41,18 @@ const Contact = () => {
               <FontAwesomeIcon icon={faMapMarkerAlt} />
               <strong> Address</strong>
               <br />
-              236 5th SE Avenue, New
+              Furlenco 
               <br />
-              York NY10000, United States
+             India Pvt. Ltd.
             </p>
 
             <p>
               <FontAwesomeIcon icon={faPhone} />
               <strong> Phone</strong>
               <br />
-              Mobile: (+84) 546-6789
+              Mobile: (+91) 546-6789
               <br />
-              Hotline: (+84) 456-6789
+              Hotline: (+91) 456-6789
             </p>
 
             <p>
@@ -117,6 +118,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

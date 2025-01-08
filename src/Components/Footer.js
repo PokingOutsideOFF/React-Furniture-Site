@@ -3,7 +3,7 @@ import "../css/footer.css";
 
 function Footer() {
   return (
-    <div>
+    <div className="footer-container">
       <section className="d-flex justify-content-center">
         <footer className="w-100">
           <div className="footer w-100">
@@ -56,7 +56,7 @@ function Footer() {
       <section className="footer">
         <hr className="footer-hr" />
         <p style={{ textAlign: "center" }} className="footer-text">
-          2024 furino. All rights reserved
+          2025 Funiro. All rights reserved
         </p>
       </section>
     </div>
