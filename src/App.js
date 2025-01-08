@@ -14,6 +14,7 @@ import { CartContext } from "./Context/CartContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/cart.css";
+import Shop from "./Components/Shop";
 
 function App() {
   const [user, setUser] = useState({
@@ -58,6 +59,8 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/contact" element={<AboutUs />} />
+              <Route path="/shop" element={<Shop />} />
+
             </Routes>
           </div>
         </HashRouter>
