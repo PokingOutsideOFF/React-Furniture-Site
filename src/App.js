@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route,HashRouter } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  HashRouter,
+} from "react-router-dom";
 import "./App.css";
 import Login from "./Components/Login";
 import Checkout from "./Components/Checkout"; // Adjust the path as necessary
@@ -7,12 +12,10 @@ import Register from "./Components/Register";
 import Cart from "./Components/cart";
 import Dash from "./Components/Dash";
 import { UserContext } from "./Context/UserContext";
-import Dashboard from "./Components/Dashboard";
 import Header from "./Components/Header"; // Ensure this path is correct
-
-import { UserContext } from "./Context/UserContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./css/cart.css"
 
 function App() {
   let [user, setUser] = useState({
@@ -29,7 +32,7 @@ function App() {
       currentUserName: null,
     });
     console.log("Logged out");
-    window.location.hash="/"
+    window.location.hash = "/";
   };
 
   return (
@@ -47,7 +50,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dash />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
