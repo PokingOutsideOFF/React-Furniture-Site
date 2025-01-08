@@ -1,14 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
+import { Link } from "react-router-dom";
 let Register = (props) => {
   let [state, setState] = useState({
     email: "",
     password: "",
     fullName: "",
-    dateOfBirth: "",
     gender: "",
     country: "",
-    receiveNewsLetters: false,
   });
 
   let userContext = useContext(UserContext);
@@ -16,20 +15,16 @@ let Register = (props) => {
     email: [],
     password: [],
     fullName: [],
-    dateOfBirth: [],
     gender: [],
     country: [],
-    receiveNewsLetters: [],
   });
 
   let [dirty, setDirty] = useState({
     email: false,
     password: false,
     fullName: false,
-    dateOfBirth: false,
     gender: false,
     country: false,
-    receiveNewsLetters: false,
   });
 
   let [message, setMessage] = useState("");
@@ -74,12 +69,6 @@ let Register = (props) => {
       errorsData.fullName.push("Full name can't be blank");
     }
 
-    //dateOfBirth
-    errorsData.dateOfBirth = [];
-    if (!state.dateOfBirth) {
-      errorsData.dateOfBirth.push("Date of birth can't be blank");
-    }
-
     //gender
     errorsData.gender = [];
     if (!state.gender) {
@@ -101,9 +90,6 @@ let Register = (props) => {
     document.title = "Register - eCommerce";
   }, []);
 
-  useEffect(() => {
-    console.log(state.receiveNewsLetters);
-  }, [state.receiveNewsLetters]);
 
   let isValid = () => {
     let valid = true;
@@ -122,6 +108,7 @@ let Register = (props) => {
     });
     setDirty(dirtyData);
     validate();
+    console.log(state)
 
     if (isValid()) {
       let response = await fetch("http://localhost:5000/users", {
@@ -133,10 +120,8 @@ let Register = (props) => {
           email: state.email,
           password: state.password,
           fullName: state.fullName,
-          dateOfBirth: state.dateOfBirth,
           gender: state.gender,
           country: state.country,
-          receiveNewsLetters: state.receiveNewsLetters,
         }),
       });
       if (response.ok) {
@@ -177,13 +162,13 @@ let Register = (props) => {
   return (
     <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
       <div className="col-lg-11 mx-auto">
-        <div className="card border-primary shadow my-2">
-          <div className="card-header border-bottom border-primary">
+        <div className="card border-warning shadow my-2">
+          <div className="card-header border-bottom border-warning">
             <h4
               style={{ fontSize: "30px", fontWeight: "700" }}
-              className="text-primary text-center my-auto p-3"
+              className="text-dark text-center my-auto p-3"
             >
-              Welcome to Furlenco - Your One Stop Furniture Shop
+              Welcome to Furlenco -  Furniture Shop
             </h4>
           </div>
 
@@ -348,13 +333,13 @@ let Register = (props) => {
               </div>
 
               <div className="row">
-                <a
-                  href="#"
+                <Link
+                  to={"/"}
                   style={{ textDecoration: "none" }}
                   className="form-text text-primary col-10"
                 >
                   Already a user? Log in
-                </a>
+                </Link>
                 {/* <div className="m-1">{message}</div> */}
                 <button
                   className="btn btn-outline-primary col-2"

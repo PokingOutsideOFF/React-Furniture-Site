@@ -1,23 +1,27 @@
 /* body {
   font-family: Arial, sans-serif;
 } */
+ *{
+  margin: 0%;
+  padding: 0;
+ }
 .bgimage {
   height: 100vh;
-  background: url(./img/Contact_Background.jpg);
+  /* background: url(.assets/img/Contact_Background.jpg); */
   background-size: cover;
   height: 300px;
 }
 .contact-h {
-  background: url(../img/Rectangle.jpg);
+  /* background: url(../img/Rectangle.jpg); */
   background-size: cover;
-  height: 300px;
+ 
   text-align: center;
   align-items: center;
 }
 .contact-h h1 {
-  font-size: 50px;
+  /* font-size: 50px; */
   font-weight: bolder;
-  padding: 105px;
+  /* padding: 105px; */
 }
 
 .contact-sec {
@@ -28,6 +32,7 @@
   font-weight: bolder;
 }
 .contact-info1 {
+  
   text-align: center;
   margin-bottom: 60px;
 }

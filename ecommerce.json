@@ -90,23 +90,38 @@
       "gender": "male",
       "country": "Japan",
       "receiveNewsLetters": false,
-      "id": "3"
+      "id": 3
+    },
+    {
+      "email": "s@s.com",
+      "password": "Shreyas2011",
+      "fullName": "Shreyas",
+      "gender": "male",
+      "country": "India",
+      "id": 4
     }
   ],
   "orders": [
     {
-      "id": "1",
+      "id": 1,
+      "userId": 1,
+      "productId": 1,
+      "quantity": 1,
+      "isPaymentCompleted": true
+    },
+    {
+      "id": 2,
       "userId": 1,
       "productId": 3,
-      "quantity": 10,
+      "quantity": 1,
       "isPaymentCompleted": true
     },
     {
       "id": "3",
       "userId": 1,
-      "productId": 3,
-      "quantity": 10,
-      "isPaymentCompleted": true
+      "productId": 4,
+      "quantity": 1,
+      "isPaymentCompleted": false
     }
   ]
 }
