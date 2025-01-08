@@ -15,7 +15,7 @@ import { UserContext } from "./Context/UserContext";
 import Header from "./Components/Header"; // Ensure this path is correct
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./css/cart.css"
+import "./css/cart.css";
 
 function App() {
   let [user, setUser] = useState({
