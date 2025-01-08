@@ -5,6 +5,11 @@ import Login from "./Components/Login";
 import Checkout from "./Components/Checkout"; // Adjust the path as necessary
 import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
+import './css/cart.css'
+import Cart from "./Components/cart";
+import Dash from "./Components/Dash";
+import { UserContext } from "./Context/UserContext";
+import Dashboard from "./Components/Dashboard";
 import Header from "./Components/Header"; // Ensure this path is correct
 import Cart from "./Components/Cart";
 import { UserContext } from "./Context/UserContext";
@@ -31,6 +36,14 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
+      <div className="">
+        {/* <Login />
+        {/* <Checkout /> */}
+        {/* <Register /> */}
+        {/* <Dashboard/> */}
+        <Dash></Dash>
+        {/* <Cart /> */}
+      </div>
       <HashRouter>
         <Header noOfItems={0} logout={logout} isLoggedIn={user.isLoggedIn} />
         <div className="container">
