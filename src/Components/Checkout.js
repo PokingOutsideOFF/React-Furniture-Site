@@ -29,34 +29,11 @@ function Checkout() {
 
   return (
     <div style={{ paddingTop: '60px' }}>
-      <div className="banner-container w-100">
-        <img
-          src="./assets/img/checkout.png"
-          alt="Background Image"
-          className="banner-image"
-        />
-        <div className="checkout-title-container">
-          <div className="checkout-title">Checkout</div>
+      <section id="contact" >
+        <div className=" contact-h pt-4 bgimage">
+          <h1 className='text-center'>Checkout</h1>
         </div>
-        <div className="breadcrumb">
-          <div className="breadcrumb-home">
-            <a
-              href="../home.html"
-              style={{ color: "black", textDecoration: "none" }}
-            >
-              Home
-            </a>
-          </div>
-          <div className="breadcrumb-current">Checkout</div>
-          <div className="breadcrumb-arrow">
-            <img
-              src="./assets/img/dashicons_arrow-down-alt2.png"
-              alt="Icon"
-              className="arrow-icon"
-            />
-          </div>
-        </div>
-      </div>
+      </section>
 
       <form method="get">
         <div className="checkout-content">

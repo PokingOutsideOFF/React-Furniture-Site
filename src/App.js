@@ -10,10 +10,11 @@ import AboutUs from "./Components/Contact";
 import "./css/contact.css";
 import { UserContext } from "./Context/UserContext";
 import Header from "./Components/Header"; // Ensure this path is correct
-import { CartContext } from "./Context/CartContext";
+import { CartContext, CartProvider } from "./Context/CartContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/cart.css";
+import "font-awesome/css/font-awesome.css"
 import Shop from "./Components/Shop";
 import Footer from "./Components/Footer";
 
@@ -45,7 +46,8 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <CartContext.Provider value={{ item, setItems }}>
+      {/* <CartContext.Provider value={{ item, setItems }}> */}
+      <CartProvider>
         <HashRouter>
           <Header
             noOfItems={item.count}
@@ -65,7 +67,8 @@ function App() {
           </div>
           {2 < 0 ? <Footer /> : ""}
         </HashRouter>
-      </CartContext.Provider>
+      </CartProvider>
+      {/* </CartContext.Provider> */}
     </UserContext.Provider>
   );
 }

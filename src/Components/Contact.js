@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import Footer from './Footer';
 
+
 const Contact = () => {
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid' style={{paddingTop: "60px"}}>
       {/* Contact Header */}
       <section id="contact" >
         <div className=" contact-h pt-4 bgimage">
