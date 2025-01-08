@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import "../css/checkout.css";
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Context/UserContext";
