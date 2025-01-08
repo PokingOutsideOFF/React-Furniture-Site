@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/cart.css";
 import Shop from "./Components/Shop";
+import Footer from "./Components/Footer";
 
 function App() {
   const [user, setUser] = useState({
@@ -60,9 +61,9 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/contact" element={<AboutUs />} />
               <Route path="/shop" element={<Shop />} />
-
             </Routes>
           </div>
+          {2 < 0 ? <Footer /> : ""}
         </HashRouter>
       </CartContext.Provider>
     </UserContext.Provider>

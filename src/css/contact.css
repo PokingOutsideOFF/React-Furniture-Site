@@ -1,27 +1,44 @@
 /* body {
   font-family: Arial, sans-serif;
 } */
- *{
+* {
   margin: 0%;
   padding: 0;
- }
-.bgimage {
-  height: 100vh;
-  /* background: url(.assets/img/Contact_Background.jpg); */
-  background-size: cover;
-  height: 300px;
 }
-.contact-h {
-  /* background: url(../img/Rectangle.jpg); */
+
+.bgimage {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.bgimage::before {
+  content: "";
+  background: url(../../public/assets/img/shop_head.png);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
- 
+  background-position: center; /* Adjust to show the lower part of the image */
+  z-index: -1;
+}
+
+.contact-h {
+  background-size: cover;
   text-align: center;
   align-items: center;
 }
+
 .contact-h h1 {
-  /* font-size: 50px; */
-  font-weight: bolder;
-  /* padding: 105px; */
+  position: relative;
+  font-weight: 600;
+  z-index: 1;
 }
 
 .contact-sec {
@@ -53,12 +70,11 @@
 }
 
 .contact-form button {
-  background-color: #c59630;
-  color: white;
   font-weight: bolder;
   border-radius: 5px;
   padding: 10px 20px;
-  width: 200px;
+  width: 195px;
+  margin-left: 25rem;
 }
 .features {
   background-color: rgb(241, 235, 160);
