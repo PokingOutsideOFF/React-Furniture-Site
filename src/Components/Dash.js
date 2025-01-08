@@ -11,9 +11,9 @@ function Dash(props) {
   return (
     <div
       className="container-fluid mx-auto"
-      style={{ marginLeft: "50px", marginRight: "50px" }}
+      style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "60px" }}
     >
-      <div
+      {/* <div
         id="alertContainer"
         className="alert alert-success fade show w-25 text-center"
         role="alert"
@@ -27,7 +27,7 @@ function Dash(props) {
         }}
       >
         Item added to cart successfully!
-      </div>
+      </div> */}
 
       <div className="alert alert-warning alert-dismissible fade show">
         Welcome, {userContext.user.currentUserName}! 👋
@@ -38,32 +38,34 @@ function Dash(props) {
           aria-label="Close"
         ></button>
       </div>
-
-      <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} />
-      <div
-        className="p-5 position-absolute w-50 h-1000 z-1 rounded-2 d-flex flex-column"
-        style={{ top: "150%", right: "5%", backgroundColor: "#fff3e3" }}
-      >
-        <h5 className="fs-6" style={{ letterSpacing: "2px" }}>
-          New Arrival
-        </h5>
-        <h3 className="h fw-bold" style={{ color: "#b98e2f" }}>
-          Discover Our
-        </h3>
-        <h3 className="h1 fw-bold" style={{ color: "#b98e2f" }}>
-          New Collection
-        </h3>
-
-        <p className="fw-semibold" style={{ fontSize: "small" }}>
-          Transform your space with stylish, affordable furniture from our
-          online store <br />- " where comfort meets design at your fingertips "
-        </p>
-        <a
-          href="shop"
-          className="mt-2 px-5 py-3 text-decoration-none fw-semibold hero-buy-btn"
+      <div className="position-static">
+        <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} />
+        <div
+          className="p-5 mt-5  position-absolute w-50 h-1000 z-1 rounded-2 d-flex flex-column"
+          style={{ top: "150%", right: "5%", backgroundColor: "#fff3e3" }}
         >
-          BUY NOW
-        </a>
+          <h5 className="fs-6" style={{ letterSpacing: "2px" }}>
+            New Arrival
+          </h5>
+          <h3 className="h fw-bold" style={{ color: "#b98e2f" }}>
+            Discover Our
+          </h3>
+          <h3 className="h1 fw-bold" style={{ color: "#b98e2f" }}>
+            New Collection
+          </h3>
+
+          <p className="fw-semibold" style={{ fontSize: "small" }}>
+            Transform your space with stylish, affordable furniture from our
+            online store <br />- " where comfort meets design at your fingertips
+            "
+          </p>
+          <a
+            href="shop"
+            className="mt-2 px-5 py-3 text-decoration-none fw-semibold hero-buy-btn"
+          >
+            BUY NOW
+          </a>
+        </div>
       </div>
 
       <div className="mt-5 d-flex flex-column justify-content-center align-items-center">
@@ -218,14 +220,12 @@ function Dash(props) {
           <h5 className="h5 fw-bold m-0">Our Products</h5>
         </div>
       </div>
-        <div class="container-fluid">
-
-      <Products />
-        </div>
-        <div class="container-fluid">
-          
-      <DashboardVideo />
-        </div>
+      <div class="container-fluid">
+        <Products />
+      </div>
+      <div class="container-fluid">
+        <DashboardVideo />
+      </div>
       {/* Video */}
       <Footer></Footer>
     </div>

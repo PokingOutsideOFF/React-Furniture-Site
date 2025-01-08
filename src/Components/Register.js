@@ -160,6 +160,7 @@ let Register = (props) => {
     validate();
   };
   return (
+    <div style={{ paddingTop: '60px' }}>
     <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
       <div className="col-lg-11 mx-auto">
         <div className="card border-warning shadow my-2">
@@ -353,7 +354,7 @@ let Register = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 
