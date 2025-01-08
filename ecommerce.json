@@ -114,13 +114,6 @@
   "orders": [
     {
       "id": 2,
-      "userId": 2,
-      "productId": 3,
-      "quantity": 1,
-      "isPaymentCompleted": true
-    },
-    {
-      "id": 2,
       "userId": 1,
       "productId": 4,
       "quantity": 1,
@@ -147,6 +140,50 @@
       "productId": 1,
       "userId": 1,
       "id": 4
+    },
+    {
+      "product": {
+        "productName": "Dining Table",
+        "category": "Table",
+        "price": 18499
+      },
+      "quantity": 1,
+      "productId": 7,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "product": {
+        "productName": "Long Sofa",
+        "category": "Sofa",
+        "price": 16499
+      },
+      "quantity": 1,
+      "productId": 2,
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "product": {
+        "productName": "Sofa Set",
+        "category": "Sofa",
+        "price": 21999
+      },
+      "quantity": 1,
+      "productId": 3,
+      "userId": 1,
+      "id": 8
     }
   ]
 }
