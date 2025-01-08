@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/header.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faClock, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { CartContext } from "../Context/CartContext";
 
 const Header = ({ noOfItems, logout, isLoggedIn }) => {
+
+  let cartContext = useContext(CartContext)
+  
   return (
     <header className="d-flex justify-content-center">
       <NavLink
@@ -79,12 +83,12 @@ const Header = ({ noOfItems, logout, isLoggedIn }) => {
                   className="py-1 px-2 rounded-4"
                   style={{ backgroundColor: "#e6a400" }}
                 >
-                  {noOfItems}
+                 {noOfItems} 
                 </NavLink>
               </li>
               <li>
                 <a
-                  className="hov"
+                  className="hov nav-link"
                   onClick={logout}
                   style={{ cursor: "pointer" }}
                 >

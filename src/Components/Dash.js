@@ -103,7 +103,7 @@ function Dash(props) {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <div className="card-wrapper container-sm d-flex justify-content-around">
+            <div className="card-wrapper  d-flex justify-content-around">
               <div
                 className="card overflow-hidden"
                 style={{ width: "14rem", border: "none" }}
@@ -158,7 +158,7 @@ function Dash(props) {
             </div>
           </div>
           <div className="carousel-item">
-            <div className="card-wrapper container-sm d-flex justify-content-around">
+            <div className="card-wrapper  d-flex justify-content-around">
               <div
                 className="card overflow-hidden"
                 style={{ width: "14rem", border: "none" }}

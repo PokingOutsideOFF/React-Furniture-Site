@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Link } from "react-router-dom";
-let Login = () => {
+import { CartContext } from "../Context/CartContext";
+
+const Login = () => {
   const [email, setEmail] = useState("scott@test.com");
   const [password, setPassword] = useState("Scott123");
-
-  let [message, setMessage] = useState("");
-
-  let userContext = useContext(UserContext);
-
-  let [errors, setErrors] = useState({
+  const [message, setMessage] = useState("");
+  const userContext = useContext(UserContext);
+  const cartContext = useContext(CartContext);
+  const [errors, setErrors] = useState({
     email: [],
     password: [],
   });
-
-  let [dirty, setDirty] = useState({
+  const [dirty, setDirty] = useState({
     email: false,
     password: false,
   });
@@ -23,32 +22,26 @@ let Login = () => {
     document.title = "Login - Furlenco";
   }, []);
 
-  let validate = () => {
-    let errorsData = {};
-
-    errorsData.email = [];
-    errorsData.password = [];
+  const validate = () => {
+    let errorsData = {
+      email: [],
+      password: [],
+    };
     const validEmailRegex = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
     const validPasswordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})/;
 
     if (!email) {
       errorsData.email.push("Email can't be blank");
-    }
-    if (email) {
-      if (!validEmailRegex.test(email)) {
-        errorsData.email.push("Email address should be proper");
-      }
+    } else if (!validEmailRegex.test(email)) {
+      errorsData.email.push("Email address should be proper");
     }
 
     if (!password) {
       errorsData.password.push("Password can't be blank");
-    }
-    if (password) {
-      if (!validPasswordRegex.test(password)) {
-        errorsData.password.push(
-          "Password should be between 6-15 characters long at least one uppercase letter, one lowercase letter and one digit"
-        );
-      }
+    } else if (!validPasswordRegex.test(password)) {
+      errorsData.password.push(
+        "Password should be between 6-15 characters long with at least one uppercase letter, one lowercase letter, and one digit"
+      );
     }
 
     setErrors(errorsData);
@@ -56,54 +49,57 @@ let Login = () => {
 
   useEffect(validate, [email, password]);
 
-  let onLoginClick = async () => {
-    let dirtyData = dirty;
-    Object.keys(dirty).forEach((control) => {
-      dirtyData[control] = true;
+  const isValid = () => {
+    return Object.values(errors).every((errorArray) => errorArray.length === 0);
+  };
+
+  const onLoginClick = async () => {
+    setDirty({
+      email: true,
+      password: true,
     });
-    setDirty(dirtyData);
     validate();
 
     if (isValid()) {
-      let response = await fetch(
-        `http://localhost:5000/users?email=${email}&password=${password}`
-      );
-      if (response.ok) {
-        let body = await response.json();
-        if (body.length > 0) {
-          userContext.setUser({
-            ...userContext.user,
-            isLoggedIn: true,
-            currentUserName: body[0].fullName,
-            currentUserId: body[0].id,
-          });
-          window.location.hash = "/dashboard";
+      try {
+        let response = await fetch(`http://localhost:5000/users?email=${email}&password=${password}`);
+        if (response.ok) {
+          let body = await response.json();
+          if (body.length > 0) {
+            userContext.setUser({
+              ...userContext.user,
+              isLoggedIn: true,
+              currentUserName: body[0].fullName,
+              currentUserId: body[0].id,
+            });
+
+            let orderResponse = await fetch(`http://localhost:5000/orders?userId=${body[0].id}`);
+            if (orderResponse.ok) {
+              let orderBody = await orderResponse.json();
+              cartContext.setItems({
+                ...cartContext.item,
+                count: orderBody.length,
+              });
+              window.location.hash = "/dashboard";
+            } else {
+              setMessage(<span className="text-danger">Failed to fetch orders</span>);
+            }
+          } else {
+            setMessage(<span className="text-danger form-text">Invalid Credentials</span>);
+          }
         } else {
-          setMessage(
-            <span className="text-danger form-text">Invalid Credentials</span>
-          );
+          setMessage(<span className="text-danger">Errors in database connection</span>);
         }
-      } else {
-        setMessage(
-          <span className="text-danger">Errors in database connection</span>
-        );
+      } catch (error) {
+        console.error("Error during login:", error);
+        setMessage(<span className="text-danger">An error occurred. Please try again later.</span>);
       }
     }
   };
 
-  let isValid = () => {
-    let valid = true;
-    for (let control in errors) {
-      if (errors[control].length > 0) {
-        valid = false;
-      }
-    }
-
-    return valid;
-  };
   return (
     <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
-      <div className="col-lg-11 mx-auto ">
+      <div className="col-lg-11 mx-auto">
         <div className="card border-warning shadow-lg my-2">
           <div className="card-header border-bottom border-warning bg-light">
             <h4
@@ -113,10 +109,9 @@ let Login = () => {
               Welcome to Furlenco - Furniture Shop
             </h4>
           </div>
-
-          <div className="card-body  border-success row">
+          <div className="card-body border-success row">
             <div className="col-lg-6">
-              <div className="mb-3 my-5 ">
+              <div className="mb-3 my-5">
                 <label htmlFor="email" className="form-label">
                   Email
                 </label>
@@ -126,9 +121,7 @@ let Login = () => {
                   value={email}
                   placeholder="Email"
                   name="email"
-                  onChange={(event) => {
-                    setEmail(event.target.value);
-                  }}
+                  onChange={(event) => setEmail(event.target.value)}
                   onBlur={(event) => {
                     setDirty({ ...dirty, [event.target.name]: true });
                     validate();
@@ -136,7 +129,7 @@ let Login = () => {
                   className="form-control"
                 />
                 <div className="text-danger form-text">
-                  {dirty["email"] && errors["email"][0] ? errors["email"] : ""}
+                  {dirty.email && errors.email[0] ? errors.email : ""}
                 </div>
               </div>
               <div className="mb-3">
@@ -149,9 +142,7 @@ let Login = () => {
                   value={password}
                   placeholder="Password"
                   name="password"
-                  onChange={(event) => {
-                    setPassword(event.target.value);
-                  }}
+                  onChange={(event) => setPassword(event.target.value)}
                   onBlur={(event) => {
                     setDirty({ ...dirty, [event.target.name]: true });
                     validate();
@@ -159,34 +150,27 @@ let Login = () => {
                   className="form-control"
                 />
                 <div className="text-danger form-text">
-                  {dirty["password"] && errors["password"][0]
-                    ? errors["password"]
-                    : ""}
+                  {dirty.password && errors.password[0] ? errors.password : ""}
                 </div>
               </div>
               <div className="row">
                 <Link
-                  to={"/register"}
+                  to="/register"
                   style={{ textDecoration: "none" }}
                   className="form-text text-primary col-10"
                 >
                   New user? Create Account
                 </Link>
                 <button
-                  className="btn btn-outline-success  col-2"
+                  className="btn btn-outline-success col-2"
                   onClick={onLoginClick}
                 >
                   Login
                 </button>
               </div>
             </div>
-
-            <img src="./assets/sofa.webp" className="col-lg-6 mx-auto" />
+            <img src="./assets/sofa.webp" className="col-lg-6 mx-auto" alt="Sofa" />
           </div>
-
-          {/* <div className="card-footer border-bottom border-success text-center col-lg-6">
-            <div className="m-1">{message}</div>
-          </div> */}
         </div>
       </div>
     </div>

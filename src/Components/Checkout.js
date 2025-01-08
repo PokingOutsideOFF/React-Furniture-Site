@@ -5,18 +5,18 @@ import Footer from "./Footer";
 function Checkout() {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const url = "http://localhost:5000/cart";
+  const url = "http://localhost:5000/order";
 
   useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setCart(data);
-        calculateTotal(data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the cart data!", error);
-      });
+    // fetch(url)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setCart(data);
+    //     calculateTotal(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was an error fetching the cart data!", error);
+    //   });
   }, []);
 
   const calculateTotal = (cartItems) => {

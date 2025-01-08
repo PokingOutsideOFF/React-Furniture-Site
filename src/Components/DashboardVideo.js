@@ -9,7 +9,7 @@ function DashboardVideo(props) {
           backgroundColor: "#ddcfb5",
           borderTopLeftRadius: "200px",
           borderTopRightRadius: "200px",
-          marginTop: "500px"
+          marginTop: "2000px"
         }}
       >
         <div className="d-flex flex-column justify-content-center align-items-center ">

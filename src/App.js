@@ -1,28 +1,30 @@
 import React, { useState } from "react";
-import {
-  Routes,
-  Route,
-  HashRouter,
-} from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 import Login from "./Components/Login";
 import Checkout from "./Components/Checkout"; // Adjust the path as necessary
 import Register from "./Components/Register";
 import Cart from "./Components/cart";
 import Dash from "./Components/Dash";
+import AboutUs from "./Components/Contact";
 import "./css/contact.css";
 import { UserContext } from "./Context/UserContext";
 import Header from "./Components/Header"; // Ensure this path is correct
+import { CartContext } from "./Context/CartContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/cart.css";
-import  Contact  from "./Components/Contact"
+import Contact from "./Components/Contact";
 
 function App() {
-  let [user, setUser] = useState({
+  const [user, setUser] = useState({
     isLoggedIn: false,
     currentUserId: null,
     currentUserName: null,
+  });
+
+  const [item, setItems] = useState({
+    count: 0,
   });
 
   const logout = () => {
@@ -32,25 +34,35 @@ function App() {
       currentUserId: null,
       currentUserName: null,
     });
+
+    setItems({
+      count: 0,
+    });
     console.log("Logged out");
     window.location.hash = "/";
   };
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <HashRouter>
-        <Header noOfItems={0} logout={logout} isLoggedIn={user.isLoggedIn} />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dash />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/contact" element={<Contact/>} />
-          </Routes>
-        </div>
-      </HashRouter>
+      <CartContext.Provider value={{ item, setItems }}>
+        <HashRouter>
+          <Header
+            noOfItems={item.count}
+            logout={logout}
+            isLoggedIn={user.isLoggedIn}
+          />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/dashboard" element={<Dash />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/contact" element={<AboutUs />} />
+            </Routes>
+          </div>
+        </HashRouter>
+      </CartContext.Provider>
     </UserContext.Provider>
   );
 }

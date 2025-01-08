@@ -67,8 +67,8 @@ nav ul li {
     background-color: #b98e2f;
     height: 3px;
     width: 0;
-    left: 0;
-    bottom: -2px;
+    left: 0rem;
+    bottom: -3px;
     
     
 }
@@ -77,6 +77,10 @@ nav ul li {
     transition: 0.4s;
 }
 
+.nav-link{
+    padding: 0;
+}
+
 .nav-link.active{
     border-bottom: 3px solid #b98e2f;
-  }
+}
