@@ -5,7 +5,7 @@ import DashboardVideo from "./DashboardVideo";
 
 function Dash(props) {
   return (
-    <div>
+    <div className="container-fluid mx-auto" style={{marginLeft: "50px", marginRight: "50px"}}>
       <div
         id="alertContainer"
         className="alert alert-success fade show w-25 text-center"
@@ -35,7 +35,7 @@ function Dash(props) {
       <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} />
       <div
         className="p-5 position-absolute w-50 h-50 z-1 rounded-2 d-flex flex-column"
-        style={{ top: "25%", right: "5%", backgrounColor: "#fff3e3" }}
+        style={{ top: "25%", right: "5%", backgroundColor: "#fff3e3" }}
       >
         <h5 className="fs-6" style={{ letterSpacing: "2px" }}>
           New Arrival
@@ -62,11 +62,11 @@ function Dash(props) {
       <div className="mt-5 d-flex flex-column justify-content-center align-items-center">
         <h5 className="h5 fw-bold m-0">Browse The Range</h5>
         <p className="" style={{ fontSize: "small", letterSpacing: "1px" }}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing.
+          Wide variety of products
         </p>
       </div>
 
-      <div className="container d-flex mb-3 justify-content-center">
+      <div className="d-flex mb-3 justify-content-center">
         <div className="d-flex gap-4 p-0">
           <button
             className="carousel-control-prev position-static rounded-4 px-3 py-1 fw-bold"
