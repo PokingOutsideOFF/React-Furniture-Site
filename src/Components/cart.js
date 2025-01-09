@@ -80,6 +80,9 @@ function Cart() {
       allProducts[index].quantity--;
       setCart(allProducts);
     }
+    else{
+      
+    }
   };
 
   const onDelete = async (ids) => {
@@ -142,7 +145,7 @@ function Cart() {
                       <td>
                         <i
                           className="fa-solid fa-circle-minus"
-                          onClick={() => onDecrement(p, 0)}
+                          onClick={() => onDecrement(p, 1)}
                           style={{
                             color: "#e6a400",
                             border: "none",

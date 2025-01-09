@@ -1,9 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Context/UserContext";
 import "../css/profile.css";
 
 function Profile(props) {
-  const userContext = useContext(UserContext);
+  const {user} = useContext(UserContext);
+  const [profile, setProfile] = useState([])
+  useEffect = async () =>{
+    const response = await fetch(
+      `http://localhost:5000/user/${user.currentUserId}`,
+      {
+        method: "GET",
+      }
+
+    );
+    const body = response.json()
+    setProfile(body)
+
+  }
+
   return (
     <div>
       <div className="main-body">
@@ -44,7 +58,7 @@ function Profile(props) {
                     <h6 className="mb-0">Full Name</h6>
                   </div>
                   <div className="col-sm-9 text-secondary">
-                    {userContext.user.currentUserName}
+                    {/* {profile.} */}
                   </div>
                 </div>
                 <hr />
@@ -60,8 +74,8 @@ function Profile(props) {
                   <div className="col-sm-12 text-center">
                     <a
                       className="btn btn-outline-dark"
-                      target="__blank"
-                      href="#"
+                      // target="__blank"
+                      // to="#"
                     >
                       Edit
                     </a>

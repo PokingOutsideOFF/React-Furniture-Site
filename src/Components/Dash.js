@@ -31,7 +31,7 @@ function Dash(props) {
             position: "fixed",
             top: "10px",
             left: "40%",
-            zIndex: 1050,
+            zIndex: 12000,
           }}
         >
           Item added to cart successfully!
