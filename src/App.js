@@ -65,7 +65,7 @@ function App() {
               <Route path="/shop" element={<Shop />} />
             </Routes>
           </div>
-          {2 < 0 ? <Footer /> : ""}
+         
         </HashRouter>
       </CartProvider>
       {/* </CartContext.Provider> */}

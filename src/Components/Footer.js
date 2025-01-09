@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div>
+    <div className="footer-container">
       <section className="d-flex justify-content-center">
         <footer className="w-100">
           <div className="footer w-100">
@@ -54,7 +54,7 @@ function Footer() {
       <section className="footer">
         <hr />
         <p style={{ textAlign: "center" }} className="footer-text">
-          2024 Furlenco. All rights reserved
+          2025 Funiro. All rights reserved
         </p>
       </section>
     </div>

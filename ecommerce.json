@@ -113,6 +113,13 @@
   ],
   "orders": [
     {
+      "id": 2,
+      "userId": 1,
+      "productId": 4,
+      "quantity": 1,
+      "isPaymentCompleted": false
+    },
+    {
       "product": {
         "productName": "Cushion Chair",
         "category": "Chair",
@@ -121,16 +128,38 @@
       "quantity": 1,
       "productId": 1,
       "userId": 1,
-      "id": 1
+      "id": 3
     },
     {
       "product": {
-        "productName": "Recliner",
+        "productName": "Cushion Chair",
         "category": "Chair",
-        "price": 11999
+        "price": 7499
       },
       "quantity": 1,
-      "productId": 4,
+      "productId": 1,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "product": {
+        "productName": "Dining Table",
+        "category": "Table",
+        "price": 18499
+      },
+      "quantity": 1,
+      "productId": 7,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
       "userId": 1,
       "id": 2
     },

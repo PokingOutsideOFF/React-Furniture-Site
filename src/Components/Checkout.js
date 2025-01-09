@@ -1,37 +1,72 @@
-import React, { useState, useEffect } from "react";
+import "../css/Checkout.css";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../Context/UserContext";
 import "../css/checkout.css";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 
 function Checkout() {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const url = "http://localhost:5000/order";
+  const { user } = useContext(UserContext);
+  const cartContext = useContext(CartContext);
 
   useEffect(() => {
-    // fetch(url)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setCart(data);
-    //     calculateTotal(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("There was an error fetching the cart data!", error);
-    //   });
-  }, []);
-
-  const calculateTotal = (cartItems) => {
-    let totalAmount = 0;
-    for (let item of cartItems) {
-      totalAmount += item.price;
-    }
+    const totalAmount = cart.reduce((acc, item) => {
+      return item.product ? acc + item.product.price * item.quantity : acc;
+    }, 0);
     setTotal(totalAmount);
+  }, [cart]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/orders?userId=${user.currentUserId}`,
+        {
+          method: "GET",
+        }
+      );
+      const body = await response.json();
+      if (Array.isArray(body)) {
+        const response2 = await fetch(`http://localhost:5000/products`, {
+          method: "GET",
+        });
+        const body2 = await response2.json();
+        const updatedCart = body.map((order) => ({
+          ...order,
+          product: body2.find((product) => product.id === order.productId),
+        }));
+        setCart(updatedCart);
+      } else {
+        console.error("Expected an array but got:", body);
+        setCart([]);
+      }
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+      setCart([]);
+    }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const calculateTotal = () => {
+    return cart.reduce((acc, item) => {
+      return item.product ? acc + item.product.price * item.quantity : acc;
+    }, 0);
+  };
+
+  const totalAmount = calculateTotal();
+  const tax = (0.15 * totalAmount).toFixed(2);
+  const totalPrice = (totalAmount * 1.15).toFixed(2);
+
   return (
-    <div style={{ paddingTop: '60px' }}>
-      <section id="contact" >
+    <div style={{ paddingTop: "60px" }}>
+      <section id="contact">
         <div className=" contact-h pt-4 bgimage">
-          <h1 className='text-center'>Checkout</h1>
+          <h1 className="text-center">Checkout</h1>
         </div>
       </section>
 
@@ -143,13 +178,18 @@ function Checkout() {
               <div className="order-item">
                 <table>
                   <tbody>
-                    {cart.map((item, index) => (
-                      <tr key={index}>
+                    {cart.map((p) => (
+                      <tr className="text-left" key={p.id}>
                         <td>
-                          <span className="product-name">{item.item}</span>
+                          <h2></h2>
+                          <span className="product-name">
+                            {p.product ? p.product.productName : "N/A"}
+                          </span>
                         </td>
                         <td>
-                          <span className="product-price">₹{item.price}</span>
+                          <span className="product-price">
+                            ₹{p.product ? p.product.price : "N/A"}
+                          </span>
                         </td>
                       </tr>
                     ))}
@@ -158,15 +198,17 @@ function Checkout() {
               </div>
               <div className="order-subtotal">
                 <span className="subtotal-label">Subtotal</span>
-                <span className="subtotal-price">₹{total}</span>
+                <span className="subtotal-price">
+                  ₹{totalAmount.toFixed(2)}
+                </span>
               </div>
               <div className="order-subtotal">
                 <span className="subtotal-label">Tax</span>
-                <span className="subtotal-price">₹{0.15 * total}</span>
+                <span className="subtotal-price">₹{tax}</span>
               </div>
               <div className="order-total">
                 <span className="total-label">Total</span>
-                <span className="total-price">₹{total * 1.15}</span>
+                <span className="total-price">₹{totalPrice}</span>
               </div>
               <div className="payment-options">
                 <div className="payment-option selected">
@@ -244,7 +286,8 @@ function Checkout() {
           <p>Dedicated support</p>
         </div>
       </div>
-      <Footer></Footer>
+
+      <Footer />
     </div>
   );
 }
