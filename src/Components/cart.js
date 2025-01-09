@@ -108,7 +108,7 @@ function Cart() {
   };
 
   return (
-    <div style={{ paddingTop: '60px' }} className="container-fluid px-0">
+    <div style={{ paddingTop: '0px' }} className="container-fluid px-0">
       <div className="top">
         {/* <img src="./assets/img/cart_img/top.png" alt="top" /> */}
       </div>

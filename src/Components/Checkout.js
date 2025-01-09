@@ -1,7 +1,7 @@
 import "../css/checkout.css";
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Context/UserContext";
-import "../css/Checkout.css";
+import "../css/checkout.css";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
@@ -63,7 +63,7 @@ function Checkout() {
   const totalPrice = (totalAmount * 1.15).toFixed(2);
 
   return (
-    <div style={{ paddingTop: "60px" }}>
+    <div style={{ paddingTop: "0px" }}>
       <section id="contact">
         <div className=" contact-h pt-4 bgimage">
           <h1 className="text-center">Checkout</h1>

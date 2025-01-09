@@ -38,7 +38,7 @@ function Dash(props) {
         </div>
       )}
 
-      <div className="alert alert-warning alert-dismissible fade show mx-auto">
+      <div className="alert alert-warning alert-dismissible fade show ms-2">
         Welcome, {userContext.user.currentUserName}! 👋
         <button
           type="button"

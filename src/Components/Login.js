@@ -114,7 +114,7 @@ const Login = () => {
   };
 
   return (
-    <div style={{ paddingTop: "60px" }}>
+    <div>
       <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
         <div className="col-lg-11 mx-auto">
           <div className="card border-warning shadow-lg my-2">

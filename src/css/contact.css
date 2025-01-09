@@ -22,7 +22,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 101%;
   height: 100%;
   background-size: cover;
   background-position: center; /* Adjust to show the lower part of the image */
@@ -74,7 +74,7 @@
   border-radius: 5px;
   padding: 10px 10px;
   width: 195px;
-  margin-left: 19.5rem;
+  margin-left: 27rem;
 }
 .features {
   background-color: rgb(241, 235, 160);

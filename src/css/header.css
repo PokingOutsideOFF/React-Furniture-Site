@@ -1,15 +1,13 @@
 header {
-  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: flex-start;
-  /* margin: 0 2em; */
-  padding: 1.5em 5em 0.4em 3.8em;
   font-size: 0.9em;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: 101%;
   background-color: #fff; /* Background color to avoid transparency */
   z-index: 10000; /* Ensure it stays on top of other content */
   padding: 10px;
