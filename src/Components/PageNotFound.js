@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 function PageNotFound() {
   return (
@@ -12,9 +13,9 @@ function PageNotFound() {
           <p className="lead">
             Sorry, the page you are looking for does not exist.
           </p>
-          <a href="/" className="p-2 mt-4 lg-btn">
+          <Link to="/dashboard" className="p-2 mt-4 lg-btn">
             Go to Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

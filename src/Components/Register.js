@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+
 let Register = (props) => {
   let [state, setState] = useState({
     email: "",
@@ -28,6 +29,7 @@ let Register = (props) => {
   });
 
   let [message, setMessage] = useState("");
+  let [showSuccess, setShowSuccess] = useState(false);
 
   let [countries] = useState([
     { id: 1, countryName: "India" },
@@ -45,7 +47,7 @@ let Register = (props) => {
     const validEmailRegex = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
     const validPasswordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})/;
 
-    //email
+    // email
     errorsData.email = [];
     if (!state.email) {
       errorsData.email.push("Email can't be blank");
@@ -53,29 +55,29 @@ let Register = (props) => {
       errorsData.email.push("Email address should be proper");
     }
 
-    //password
+    // password
     errorsData.password = [];
     if (!state.password) {
       errorsData.password.push("Password can't be blank");
     } else if (!validPasswordRegex.test(state.password)) {
       errorsData.password.push(
-        "Password should be between 6-15 characters long at least one uppercase letter, one lowercase letter and one digit"
+        "Password should be between 6-15 characters long with at least one uppercase letter, one lowercase letter, and one digit"
       );
     }
 
-    //fullName
+    // fullName
     errorsData.fullName = [];
     if (!state.fullName) {
       errorsData.fullName.push("Full name can't be blank");
     }
 
-    //gender
+    // gender
     errorsData.gender = [];
     if (!state.gender) {
       errorsData.gender.push("Please select the gender");
     }
 
-    //country
+    // country
     errorsData.country = [];
     if (!state.country) {
       errorsData.country.push("Country can't be blank");
@@ -125,20 +127,18 @@ let Register = (props) => {
       });
       if (response.ok) {
         let body = await response.json();
-        // userContext.setUser({
-        //   ...userContext.user,
-        //   isLoggedIn: true,
-        //   currentUserName: body.fullName,
-        //   currentUserId: body.id,
-        // });
-        window.location.hash = "/";
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+          window.location.hash = "/";
+        }, 3000);
       } else {
         setMessage(
           <span className="text-danger">Errors in database connection</span>
         );
       }
     } else {
-      // setMessage(<span className="text-danger">Errors</span>);
+      setMessage(<span className="text-danger">Errors</span>);
     }
   };
 
@@ -158,8 +158,14 @@ let Register = (props) => {
     }));
     validate();
   };
+
   return (
     <div>
+         {showSuccess && (
+        <div className="alert alert-success" role="alert">
+          Registered successfully! Please Login
+        </div>
+      )}
       <div className="row d-flex align-items-center" style={{ height: "90vh" }}>
         <div className="col-lg-11 mx-auto">
           <div className="card border-warning shadow my-2">
@@ -172,7 +178,7 @@ let Register = (props) => {
               </h4>
             </div>
 
-            <div className="card-body  border-primary row">
+            <div className="card-body border-primary row">
               <div className="col-lg-6">
                 <div className="mb-3 row">
                   <div className="col-lg-4">
@@ -190,7 +196,7 @@ let Register = (props) => {
                       onBlur={handleBlur}
                       className="form-control"
                     />
-                    <div className="text-danger ">
+                    <div className="text-danger">
                       {dirty["fullName"] && errors["fullName"][0]
                         ? errors["fullName"]
                         : ""}
@@ -221,7 +227,7 @@ let Register = (props) => {
                 </div>
 
                 <div className="mb-3 row">
-                  <div className="col-lg-4 ">
+                  <div className="col-lg-4">
                     <label htmlFor="password" className="col-form-label">
                       Password
                     </label>
@@ -246,7 +252,7 @@ let Register = (props) => {
 
                 <div className="mb-3 row">
                   <div className="col-lg-4">
-                    <label htmlFor="gender" className=" col-form-label">
+                    <label htmlFor="gender" className="col-form-label">
                       Gender
                     </label>
                   </div>
@@ -258,7 +264,7 @@ let Register = (props) => {
                         id="male"
                         className="form-check-input"
                         value="male"
-                        checked={state.gender === "male" ? true : false}
+                        checked={state.gender === "male"}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
@@ -271,7 +277,7 @@ let Register = (props) => {
                         id="female"
                         className="form-check-input"
                         value="female"
-                        checked={state.gender === "female" ? true : false}
+                        checked={state.gender === "female"}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
@@ -284,13 +290,11 @@ let Register = (props) => {
                         id="notSay"
                         className="form-check-input"
                         value="Prefer not to say"
-                        checked={
-                          state.gender === "Prefer not to say" ? true : false
-                        }
+                        checked={state.gender === "Prefer not to say"}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
-                      <label htmlFor="female">Prefer not to say</label>
+                      <label htmlFor="notSay">Prefer not to say</label>
                     </div>
                     <div className="text-danger">
                       {dirty["gender"] && errors["gender"][0]
@@ -340,7 +344,6 @@ let Register = (props) => {
                   >
                     Already a user? Log in
                   </Link>
-                  {/* <div className="m-1">{message}</div> */}
                   <button className="lg-btn col-2" onClick={onRegisterClick}>
                     Register
                   </button>
@@ -351,6 +354,7 @@ let Register = (props) => {
           </div>
         </div>
       </div>
+   
     </div>
   );
 };
