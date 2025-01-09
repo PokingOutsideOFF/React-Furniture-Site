@@ -172,6 +172,10 @@ function Checkout() {
 
           <div className="order-summary">
             <h2 className="section-title">Order Summary</h2>
+
+            <div><h6>Thank you for shopping with us...❤️❤️  <b>{user.currentUserName}</b>!!. <br />
+            This is your shopping summary👇👇⚡</h6></div>
+
             <div className="order-summary">
               <h2 className="order-summary-title">Product</h2>
               <h2 className="order-summary-title">Subtotal</h2>
@@ -181,7 +185,6 @@ function Checkout() {
                     {cart.map((p) => (
                       <tr className="text-left" key={p.id}>
                         <td>
-                          <h2></h2>
                           <span className="product-name">
                             {p.product ? p.product.productName : "N/A"}
                           </span>
