@@ -18,7 +18,7 @@ const Header = ({ logout, isLoggedIn }) => {
   const {noOfItems} = useContext(CartContext)
 
   return (
-    <header className="d-flex justify-content-center" >
+    <header className="d-flex justify-content-space-between" >
       <NavLink
         to="/dashboard"
         className="navbar-icon d-flex text-decoration-none text-black gap-2"
@@ -37,7 +37,8 @@ const Header = ({ logout, isLoggedIn }) => {
         <ul className="sub-head">
           {isLoggedIn ? (
             <>
-              <li style={{ marginLeft: "2em" }}>
+              
+              <li style={{ marginLeft: "3em" }}>
                 <NavLink
                   className="home nav-link"
                   to="/dashboard"
@@ -46,7 +47,7 @@ const Header = ({ logout, isLoggedIn }) => {
                   Dashboard
                 </NavLink>
               </li>
-              <li style={{ marginLeft: "2em" }}>
+              <li style={{ marginLeft: "1em" }}>
                 <NavLink
                   className="hov nav-link"
                   to="/shop"
@@ -55,7 +56,7 @@ const Header = ({ logout, isLoggedIn }) => {
                   Shop
                 </NavLink>
               </li>
-              <li style={{ marginLeft: "2em", marginRight: "8em" }}>
+              <li style={{ marginLeft: "1em", marginRight: "25em" }}>
                 <NavLink
                   className="hov nav-link"
                   to="/contact"
@@ -64,13 +65,16 @@ const Header = ({ logout, isLoggedIn }) => {
                   Contact
                 </NavLink>
               </li>
-
-              <li className="icon">
+        
+              <ul className="mx-auto">
+              
+              <li className="icon " >
                 <NavLink to="/profile">
                   <FontAwesomeIcon icon={faUser} />
                 </NavLink>
               </li>
-              <li>
+                
+                <li >
                 <NavLink to="/cart">
                   <FontAwesomeIcon icon={faCartShopping} />
                 </NavLink>
@@ -90,7 +94,8 @@ const Header = ({ logout, isLoggedIn }) => {
                 >
                   Logout
                 </a>
-              </li>
+                </li>
+                </ul>
             </>
           ) : (
             <>
