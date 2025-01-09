@@ -7,6 +7,7 @@ import Register from "./Components/Register";
 import Cart from "./Components/cart";
 import Dash from "./Components/Dash";
 import AboutUs from "./Components/Contact";
+import PageNotFound from "./Components/PageNotFound"
 import "./css/contact.css";
 import { UserContext } from "./Context/UserContext";
 import Header from "./Components/Header"; // Ensure this path is correct
@@ -64,6 +65,7 @@ function App() {
               <Route path="/contact" element={<AboutUs />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<PageNotFound />} /> {/* Wildcard route */}
             </Routes>
           </div>
          

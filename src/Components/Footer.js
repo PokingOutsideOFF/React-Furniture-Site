@@ -53,9 +53,9 @@ function Footer() {
 
       <section className="footer">
         <hr />
-        <p style={{ textAlign: "center" }} className="footer-text">
-          2025 Funiro. All rights reserved
-          Made with Love ❤️ Team Pheonix 🐦‍🔥
+        <p style={{ textAlign: "center" }} className="footer-text ps-5">
+          2025 Funiro. All rights reserved.
+          Made with Love ❤️. Team Pheonix 🐦‍🔥
         </p>
       </section>
     </div>
