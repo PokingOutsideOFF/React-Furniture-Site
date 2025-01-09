@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/shop.css";
 import Products from "./Products";
 import Footer from "./Footer";
 
 function Shop() {
-  return (
+  const [showAlert, setShowAlert] = useState(false);
 
+  const handleAddToCart = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  };
+  return (
     <div class="container-fluid" style={{ paddingTop: "60px" }}>
+      {showAlert && (
+        <div
+          id="alertContainer"
+          className="alert alert-success fade show w-25 text-center"
+          role="alert"
+          style={{
+            position: "fixed",
+            top: "10px",
+            left: "40%",
+            zIndex: 1050,
+          }}
+        >
+          Item added to cart successfully!
+        </div>
+      )}
       <div class="rect mb-3">
         <img
           src="./assets/img/shop_head.png"
@@ -35,67 +57,67 @@ function Shop() {
         </div>
       </div>
       <div class="container-fluid">
-        <Products />
-    </div>
-        <div class=" container-fluid ">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  1
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  2
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  3
-                </a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="wrappers container-fluid ">
-          <div class="itemshop">
-            <img src="./assets/img/trophy 1.png" alt="High Quality Icon" />
-            <div>
-              <h3>High Quality</h3>
-              <p>crafted from top materials</p>
-            </div>
-          </div>
-          <div class="itemshop">
-            <img src="./assets/img/guarantee.png" alt="Warranty Icon" />
-            <div>
-              <h3>Warranty Protection</h3>
-              <p>Over 2 years</p>
-            </div>
-          </div>
-          <div class="itemshop">
-            <img src="./assets/img/shipping.png" alt="Free Shipping Icon" />
-            <div>
-              <h3>Free Shipping</h3>
-              <p>Order over $150</p>
-            </div>
-          </div>
-          <div class="itemshop">
-            <img src="./assets/img/customer-support.png" alt="Support Icon" />
-            <div>
-              <h3>24 / 7 Support</h3>
-              <p>Dedicated support</p>
-            </div>
-          </div>
-        </div>
-        <Footer></Footer>
+        <Products onAddToCart={handleAddToCart} />
       </div>
+      <div class=" container-fluid ">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#">
+                1
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                2
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                3
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="wrappers container-fluid ">
+        <div class="itemshop">
+          <img src="./assets/img/trophy 1.png" alt="High Quality Icon" />
+          <div>
+            <h3>High Quality</h3>
+            <p>crafted from top materials</p>
+          </div>
+        </div>
+        <div class="itemshop">
+          <img src="./assets/img/guarantee.png" alt="Warranty Icon" />
+          <div>
+            <h3>Warranty Protection</h3>
+            <p>Over 2 years</p>
+          </div>
+        </div>
+        <div class="itemshop">
+          <img src="./assets/img/shipping.png" alt="Free Shipping Icon" />
+          <div>
+            <h3>Free Shipping</h3>
+            <p>Order over $150</p>
+          </div>
+        </div>
+        <div class="itemshop">
+          <img src="./assets/img/customer-support.png" alt="Support Icon" />
+          <div>
+            <h3>24 / 7 Support</h3>
+            <p>Dedicated support</p>
+          </div>
+        </div>
+      </div>
+      <Footer></Footer>
+    </div>
     // </div>
   );
 }

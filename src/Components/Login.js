@@ -19,6 +19,11 @@ const Login = () => {
   });
 
   useEffect(() => {
+    const img = new Image();
+    img.src = './assets/sofa.webp';
+  }, []);
+
+  useEffect(() => {
     document.title = "Login - Furlenco";
   }, []);
 
@@ -80,10 +85,7 @@ const Login = () => {
             );
             if (orderResponse.ok) {
               let orderBody = await orderResponse.json();
-              cartContext.setItems({
-                ...cartContext.item,
-                count: orderBody.length,
-              });
+              cartContext.setItemsCount(orderBody.length);
               window.location.hash = "/dashboard";
             } else {
               setMessage(

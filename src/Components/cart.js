@@ -3,12 +3,13 @@ import { UserContext } from "../Context/UserContext";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+import "../css/contact.css"
 
 function Cart() {
   const [id, setID] = useState(1);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  let cartContext = useContext(CartContext);
+  const {removeItemFromCart} = useContext(CartContext);
 
   const { user } = useContext(UserContext);
 
@@ -95,7 +96,8 @@ function Cart() {
             return c.id != ids;
           });
           setCart(newOrders);
-          cartContext.item.count = newOrders.length;
+          removeItemFromCart();
+          
         } else {
           console.error("Failed to delete the item");
         }
@@ -106,10 +108,15 @@ function Cart() {
   };
 
   return (
-    <div style={{ paddingTop: '60px' }}>
+    <div style={{ paddingTop: '60px' }} className="container-fluid">
       <div className="top">
-        <img src="./assets/img/cart_img/top.png" alt="top" />
+        {/* <img src="./assets/img/cart_img/top.png" alt="top" /> */}
       </div>
+      <section id="contact" >
+        <div className=" contact-h pt-4 bgimage">
+          <h1 className='text-center'>Cart</h1>
+        </div>
+      </section>
       <div className="container-fluid">
         <section className="cart-section-outer">
           <div className="cart-section w-100">
@@ -140,6 +147,7 @@ function Cart() {
                             color: "#e6a400",
                             border: "none",
                             cursor: "pointer",
+                            marginRight: "5px"
                           }}
                         >
                           -
@@ -154,7 +162,7 @@ function Cart() {
                             cursor: "pointer",
                           }}
                         >
-                          +
+                          + 
                         </i>
                       </td>
                       <td>
@@ -162,7 +170,7 @@ function Cart() {
                       </td>
                       <td>
                         <button
-                          className="fa-solid fa-trash btn btn-outline-danger"
+                          className=" btn btn-outline-danger"
                           onClick={() => onDelete(p.id)}
                           style={{ cursor: "pointer" }}
                         >
@@ -175,7 +183,7 @@ function Cart() {
               </table>
             </div>
 
-            <div className="cart-total">
+            <div className="cart-total" style={{height:"300px"}}>
               <h3>Cart Totals</h3>
               <p className="Subtotal">
                 Subtotal: <span className="total-amount">₹{total}</span>

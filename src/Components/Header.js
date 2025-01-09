@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { use, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,8 +13,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { CartContext } from "../Context/CartContext";
 
-const Header = ({ noOfItems, logout, isLoggedIn }) => {
-  let cartContext = useContext(CartContext);
+const Header = ({ logout, isLoggedIn }) => {
+  // let cartContext = useContext(CartContext);
+  const {noOfItems} = useContext(CartContext)
 
   return (
     <header className="d-flex justify-content-center" >

@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../css/dashboard.css";
 import { UserContext } from "../Context/UserContext";
+import { CartContext } from "../Context/CartContext";
 
 function Products({ onAddToCart }) {
   const [products, setProducts] = useState([]); // Initialize state as an empty array
   let userContext = useContext(UserContext);
+  const {addItemToCart} = useContext(CartContext)
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
   const fetchProducts = async () => {
-    console.log("hello");
     try {
       let response = await fetch("http://localhost:5000/products");
       if (response.ok) {
@@ -55,8 +56,8 @@ function Products({ onAddToCart }) {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      // Call the onAddToCart function to show the alert
       onAddToCart();
+      addItemToCart();
     } catch (error) {
       console.error("There is an error", error);
     }
