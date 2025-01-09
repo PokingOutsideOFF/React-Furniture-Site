@@ -10,12 +10,15 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #fff; /* Background color to avoid transparency */
+  background-color: #fff;
   z-index: 1000; /* Ensure it stays on top of other content */
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.icon{
+  /* margin-left: 5em; */
+}
 .head-icon {
   height: 2.45em;
   width: auto;
