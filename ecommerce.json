@@ -115,106 +115,34 @@
       "password": "Sudhan123",
       "fullName": "Sudhanshu",
       "gender": "male",
+      "country": "Germany"
+    },
+    {
+      "id": "98ef",
+      "email": "van@g.com",
+      "password": "Vansh@1234",
+      "fullName": "Vansh P",
+      "gender": "male",
+      "country": "India"
+    },
+    {
+      "email": "va@v.com",
+      "password": "Vansh2011",
+      "fullName": "Vansh",
+      "gender": "male",
       "country": "India",
-      "id": 5
+      "id": "eVnGYaA"
+    },
+    {
+      "email": "su@s.com",
+      "password": "Sudh2011",
+      "fullName": "Sudh",
+      "gender": "male",
+      "country": "India",
+      "id": "iExM4L9"
     }
   ],
   "orders": [
-    {
-      "id": 2,
-      "userId": 1,
-      "productId": 4,
-      "quantity": 1,
-      "isPaymentCompleted": false
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": 1,
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": 1,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "product": {
-        "productName": "Dining Table",
-        "category": "Table",
-        "price": 18499
-      },
-      "quantity": 1,
-      "productId": 7,
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": 1,
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": 1,
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": 1,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": 1,
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "product": {
-        "productName": "Cushion Chair",
-        "category": "Chair",
-        "price": 7499
-      },
-      "quantity": 1,
-      "productId": "10",
-      "userId": "1",
-      "id": 1
-    },
     {
       "product": {
         "productName": "Recliner",
@@ -236,6 +164,17 @@
       "productId": "2",
       "userId": "1",
       "id": 3
+    },
+    {
+      "product": {
+        "productName": "Long Sofa",
+        "category": "Sofa",
+        "price": 16499
+      },
+      "quantity": 1,
+      "productId": "2",
+      "userId": "1",
+      "id": 4
     }
   ]
 }

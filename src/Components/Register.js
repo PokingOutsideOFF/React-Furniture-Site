@@ -125,13 +125,13 @@ let Register = (props) => {
       });
       if (response.ok) {
         let body = await response.json();
-        userContext.setUser({
-          ...userContext.user,
-          isLoggedIn: true,
-          currentUserName: body.fullName,
-          currentUserId: body.id,
-        });
-        window.location.hash = "/dashboard";
+        // userContext.setUser({
+        //   ...userContext.user,
+        //   isLoggedIn: true,
+        //   currentUserName: body.fullName,
+        //   currentUserId: body.id,
+        // });
+        window.location.hash = "/";
       } else {
         setMessage(
           <span className="text-danger">Errors in database connection</span>
@@ -190,7 +190,7 @@ let Register = (props) => {
                       onBlur={handleBlur}
                       className="form-control"
                     />
-                    <div className="text-danger">
+                    <div className="text-danger ">
                       {dirty["fullName"] && errors["fullName"][0]
                         ? errors["fullName"]
                         : ""}
@@ -341,10 +341,7 @@ let Register = (props) => {
                     Already a user? Log in
                   </Link>
                   {/* <div className="m-1">{message}</div> */}
-                  <button
-                    className="lg-btn col-2"
-                    onClick={onRegisterClick}
-                  >
+                  <button className="lg-btn col-2" onClick={onRegisterClick}>
                     Register
                   </button>
                 </div>
