@@ -1,0 +1,13 @@
+.lg-btn{
+    color: #b98e2f; 
+    border: 1px solid #b98e2f;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.lg-btn:hover{
+    transition: 0.5s;
+    color: white;
+    background-color: #b98e2f;
+}

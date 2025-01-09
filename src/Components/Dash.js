@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../css/dashboard.css";
 import Products from "./Products";
 import DashboardVideo from "./DashboardVideo";
@@ -17,10 +17,14 @@ function Dash(props) {
     }, 3000);
   };
 
+    useEffect(() => {
+      document.title = "Dashboard - Furlenco";
+    }, []);
+
   return (
     <div
       className="container-fluid mx-auto px-0"
-      style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "60px" }}
+      style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "20px" }}
     >
       {showAlert && (
         <div
@@ -31,14 +35,14 @@ function Dash(props) {
             position: "fixed",
             top: "10px",
             left: "40%",
-            zIndex: 1050,
+            zIndex: 12000,
           }}
         >
           Item added to cart successfully!
         </div>
       )}
 
-      <div className="alert alert-warning alert-dismissible fade show mx-auto">
+      <div className="alert alert-warning alert-dismissible fade show ms-2">
         Welcome, {userContext.user.currentUserName}! 👋
         <button
           type="button"

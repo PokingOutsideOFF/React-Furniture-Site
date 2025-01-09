@@ -70,7 +70,7 @@ const Header = ({ logout, isLoggedIn }) => {
               
               <li className="icon " >
                 <NavLink to="/profile">
-                  <FontAwesomeIcon icon={faUser} />
+                  <FontAwesomeIcon icon={faUser } />
                 </NavLink>
               </li>
                 
@@ -80,8 +80,8 @@ const Header = ({ logout, isLoggedIn }) => {
                 </NavLink>
                 <NavLink
                   to="/cart"
-                  className="py-1 px-2 rounded-4"
-                  style={{ backgroundColor: "#e6a400" }}
+                  className="rounded-circle px-2"
+                  style={{ backgroundColor: "#e6a400", position:"absolute", left:"87%", top: "10%",  margin: 0, fontSize: "small" }}
                 >
                   {noOfItems}
                 </NavLink>

@@ -13,6 +13,10 @@ function Cart() {
 
   const { user } = useContext(UserContext);
 
+    useEffect(() => {
+      document.title = "Cart - Furlenco";
+    }, []);
+
   useEffect(() => {
     let totalAmount = 0;
     cart.forEach((item) => {
@@ -80,6 +84,9 @@ function Cart() {
       allProducts[index].quantity--;
       setCart(allProducts);
     }
+    else{
+      
+    }
   };
 
   const onDelete = async (ids) => {
@@ -108,7 +115,7 @@ function Cart() {
   };
 
   return (
-    <div style={{ paddingTop: '60px' }} className="container-fluid px-0">
+    <div style={{ paddingTop: '0px' }} className="container-fluid px-0">
       <div className="top">
         {/* <img src="./assets/img/cart_img/top.png" alt="top" /> */}
       </div>
@@ -142,7 +149,7 @@ function Cart() {
                       <td>
                         <i
                           className="fa-solid fa-circle-minus"
-                          onClick={() => onDecrement(p, 0)}
+                          onClick={() => onDecrement(p, 1)}
                           style={{
                             color: "#e6a400",
                             border: "none",

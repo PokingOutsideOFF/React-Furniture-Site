@@ -54,7 +54,7 @@ function App() {
             logout={logout}
             isLoggedIn={user.isLoggedIn}
           />
-          <div className="container-fluid mt-5 px-0">
+          <div className="container-fluid px-0">
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/register" element={<Register />} />
