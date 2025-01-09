@@ -55,6 +55,7 @@ function Footer() {
         <hr />
         <p style={{ textAlign: "center" }} className="footer-text">
           2025 Funiro. All rights reserved
+          Made with Love ❤️ Team Pheonix 🐦‍🔥
         </p>
       </section>
     </div>
