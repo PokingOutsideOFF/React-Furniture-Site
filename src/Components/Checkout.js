@@ -1,7 +1,7 @@
 import "../css/checkout.css";
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Context/UserContext";
-import "../css/Checkout.css";
+
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";

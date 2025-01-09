@@ -113,6 +113,35 @@
   ],
   "orders": [
     {
+      "id": 2,
+      "userId": 1,
+      "productId": 4,
+      "quantity": 1,
+      "isPaymentCompleted": false
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": 4
+    },
+    {
       "product": {
         "productName": "Dining Table",
         "category": "Table",
@@ -132,62 +161,7 @@
       "quantity": 1,
       "productId": 1,
       "userId": 1,
-      "id": 2
-    },
-    {
-      "product": {
-        "productName": "Recliner",
-        "category": "Chair",
-        "price": 11999
-      },
-      "quantity": 1,
-      "productId": 4,
-      "userId": 1,
       "id": 6
-    },
-    {
-      "product": {
-        "productName": "Long Sofa",
-        "category": "Sofa",
-        "price": 16499
-      },
-      "quantity": 1,
-      "productId": 2,
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "product": {
-        "productName": "Sofa Set",
-        "category": "Sofa",
-        "price": 21999
-      },
-      "quantity": 1,
-      "productId": 3,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "product": {
-        "productName": "Sofa Set",
-        "category": "Sofa",
-        "price": 21999
-      },
-      "quantity": 1,
-      "productId": 3,
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "product": {
-        "productName": "Long Sofa",
-        "category": "Sofa",
-        "price": 16499
-      },
-      "quantity": 1,
-      "productId": 2,
-      "userId": 1,
-      "id": 10
     },
     {
       "product": {
@@ -198,18 +172,29 @@
       "quantity": 1,
       "productId": 1,
       "userId": 1,
-      "id": 11
+      "id": 7
     },
     {
       "product": {
-        "productName": "Long Sofa",
-        "category": "Sofa",
-        "price": 16499
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
       },
       "quantity": 1,
-      "productId": 2,
+      "productId": 1,
       "userId": 1,
-      "id": 12
+      "id": 8
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": 9
     }
   ]
 }
