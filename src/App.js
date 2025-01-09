@@ -16,7 +16,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/cart.css";
 import "font-awesome/css/font-awesome.css"
 import Shop from "./Components/Shop";
-import Footer from "./Components/Footer";
+import Profile from "./Components/Profile";
 
 function App() {
   const [user, setUser] = useState({
@@ -54,7 +54,7 @@ function App() {
             logout={logout}
             isLoggedIn={user.isLoggedIn}
           />
-          <div className="container">
+          <div className="container-fluid mt-5 px-0">
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/register" element={<Register />} />
@@ -63,6 +63,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/contact" element={<AboutUs />} />
               <Route path="/shop" element={<Shop />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </div>
          

@@ -19,7 +19,7 @@ function Dash(props) {
 
   return (
     <div
-      className="container-fluid mx-auto"
+      className="container-fluid mx-auto px-0"
       style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "60px" }}
     >
       {showAlert && (
@@ -38,7 +38,7 @@ function Dash(props) {
         </div>
       )}
 
-      <div className="alert alert-warning alert-dismissible fade show">
+      <div className="alert alert-warning alert-dismissible fade show mx-auto">
         Welcome, {userContext.user.currentUserName}! 👋
         <button
           type="button"
@@ -51,7 +51,7 @@ function Dash(props) {
         <img src="../assets/img/hero.png" alt="" style={{ width: "100%" }} />
         <div
           className="p-5 mt-5 position-absolute w-50 h-1000 z-1 rounded-2 d-flex flex-column"
-          style={{ top: "150%", right: "5%", backgroundColor: "#fff3e3" }}
+          style={{ top: "40%", right: "5%", backgroundColor: "#fff3e3" }}
         >
           <h5 className="fs-6" style={{ letterSpacing: "2px" }}>
             New Arrival

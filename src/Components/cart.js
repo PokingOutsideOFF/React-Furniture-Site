@@ -108,7 +108,7 @@ function Cart() {
   };
 
   return (
-    <div style={{ paddingTop: '60px' }} className="container-fluid">
+    <div style={{ paddingTop: '60px' }} className="container-fluid px-0">
       <div className="top">
         {/* <img src="./assets/img/cart_img/top.png" alt="top" /> */}
       </div>
@@ -117,7 +117,7 @@ function Cart() {
           <h1 className='text-center'>Cart</h1>
         </div>
       </section>
-      <div className="container-fluid">
+      <div className="container-fluid px-0">
         <section className="cart-section-outer">
           <div className="cart-section w-100">
             <div className="card p-5 w-100">

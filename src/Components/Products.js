@@ -65,7 +65,7 @@ function Products({ onAddToCart }) {
 
   return (
     <div style={{ paddingTop: "60px" }}>
-      <div className="container-fluid mt-5">
+      <div className="container-fluid mt-5 p-5">
         <div className="row border-danger justify-content-evenly mb-5">
           {products.map((product) => (
             <div className="col-md-4 mb-4" key={product.id}>
@@ -126,25 +126,16 @@ function Products({ onAddToCart }) {
                       <img src="../assets/img/share.svg" alt="" width="16" />
                       <span
                         className="text-white fw-semibold"
-                        style={{ fontSize: "small" }}
+                        style={{ fontSize: "small",  cursor: "pointer" }}
                       >
                         Share
-                      </span>
-                    </div>
-                    <div className="compare-div">
-                      <img src="../assets/img/compare.svg" alt="" width="16" />
-                      <span
-                        className="text-white fw-semibold"
-                        style={{ fontSize: "small" }}
-                      >
-                        Compare
                       </span>
                     </div>
                     <div className="like-div">
                       <img src="../assets/img/heart.svg" alt="" width="16" />
                       <span
                         className="text-white fw-semibold"
-                        style={{ fontSize: "small" }}
+                        style={{ fontSize: "small", cursor: "pointer" }}
                       >
                         Like
                       </span>
