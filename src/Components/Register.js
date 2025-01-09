@@ -87,7 +87,7 @@ let Register = (props) => {
   useEffect(validate, [state]);
 
   useEffect(() => {
-    document.title = "Register - eCommerce";
+    document.title = "Register - Furlenco";
   }, []);
 
   let isValid = () => {
@@ -342,7 +342,7 @@ let Register = (props) => {
                   </Link>
                   {/* <div className="m-1">{message}</div> */}
                   <button
-                    className="btn btn-outline-primary col-2"
+                    className="lg-btn col-2"
                     onClick={onRegisterClick}
                   >
                     Register

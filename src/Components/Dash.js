@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../css/dashboard.css";
 import Products from "./Products";
 import DashboardVideo from "./DashboardVideo";
@@ -17,10 +17,14 @@ function Dash(props) {
     }, 3000);
   };
 
+    useEffect(() => {
+      document.title = "Dashboard - Furlenco";
+    }, []);
+
   return (
     <div
       className="container-fluid mx-auto px-0"
-      style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "60px" }}
+      style={{ marginLeft: "50px", marginRight: "50px", paddingTop: "20px" }}
     >
       {showAlert && (
         <div

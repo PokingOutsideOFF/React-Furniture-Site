@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+import "../css/login.css"
 
 const Login = () => {
-  const [email, setEmail] = useState("scott@test.com");
-  const [password, setPassword] = useState("Scott123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const userContext = useContext(UserContext);
   const cartContext = useContext(CartContext);
@@ -172,6 +173,7 @@ const Login = () => {
                       : ""}
                   </div>
                 </div>
+                {message}
                 <div className="row">
                   <Link
                     to="/register"
@@ -181,7 +183,7 @@ const Login = () => {
                     New user? Create Account
                   </Link>
                   <button
-                    className="btn btn-outline-success col-2"
+                    className="lg-btn col-2"
                     onClick={onLoginClick}
                   >
                     Login

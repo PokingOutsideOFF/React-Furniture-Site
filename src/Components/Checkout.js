@@ -62,6 +62,10 @@ function Checkout() {
   const tax = (0.15 * totalAmount).toFixed(2);
   const totalPrice = (totalAmount * 1.15).toFixed(2);
 
+    useEffect(() => {
+      document.title = "Checkout - Furlenco";
+    }, []);
+
   return (
     <div style={{ paddingTop: "0px" }}>
       <section id="contact">

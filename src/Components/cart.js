@@ -13,6 +13,10 @@ function Cart() {
 
   const { user } = useContext(UserContext);
 
+    useEffect(() => {
+      document.title = "Cart - Furlenco";
+    }, []);
+
   useEffect(() => {
     let totalAmount = 0;
     cart.forEach((item) => {

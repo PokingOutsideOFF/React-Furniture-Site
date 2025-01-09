@@ -3,24 +3,28 @@ import { UserContext } from "../Context/UserContext";
 import "../css/profile.css";
 
 function Profile(props) {
-  const {user} = useContext(UserContext);
+  const userContext = useContext(UserContext);
   const [profile, setProfile] = useState([])
-  useEffect = async () =>{
-    const response = await fetch(
-      `http://localhost:5000/user/${user.currentUserId}`,
-      {
-        method: "GET",
-      }
+//   useEffect = async () =>{
+//     const response = await fetch(
+//       `http://localhost:5000/user/${userContext.user.currentUserId}`,
+//       {
+//         method: "GET",
+//       }
 
-    );
-    const body = response.json()
-    setProfile(body)
+//     );
+//     const body = response.json()
+//     setProfile(body)
 
-  }
+//   }
+
+    useEffect(() => {
+      document.title = "Profile - Furlenco";
+    }, []);
 
   return (
     <div>
-      <div className="main-body">
+      <div className="main-body px-5" style={{marginTop: "20px"}}>
         <div className="row gutters-sm">
           <div className="col-md-4 mb-3">
             <div className="card">
@@ -36,7 +40,7 @@ function Profile(props) {
                     <h4>{userContext.user.currentUserName}</h4>
                     <p className="text-secondary mb-1">Furniture Buyer</p>
                     <p className="text-muted font-size-sm">
-                      Bay Area, San Francisco, CA
+                      
                     </p>
                     <button
                       className="btn btn-primary"
@@ -58,7 +62,7 @@ function Profile(props) {
                     <h6 className="mb-0">Full Name</h6>
                   </div>
                   <div className="col-sm-9 text-secondary">
-                    {/* {profile.} */}
+                    {userContext.user.currentUserName}
                   </div>
                 </div>
                 <hr />

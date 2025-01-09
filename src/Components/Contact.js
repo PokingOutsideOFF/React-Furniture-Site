@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +18,10 @@ const Contact = () => {
       setShowAlert(false);
     }, 3000);
   };
+
+    useEffect(() => {
+      document.title = "Contact - Furlenco";
+    }, []);
 
   return (
     <div className="container-fluid px-0" style={{ paddingTop: "0px" }}>

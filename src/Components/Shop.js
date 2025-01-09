@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/shop.css";
 import Products from "./Products";
 import Footer from "./Footer";
@@ -13,6 +13,10 @@ function Shop() {
       setShowAlert(false);
     }, 3000);
   };
+
+    useEffect(() => {
+      document.title = "Shop - Furlenco";
+    }, []);
   return (
     <div className="container-fluid px-0 " style={{ paddingTop: "0px" }}>
       {showAlert && (
@@ -64,24 +68,24 @@ function Shop() {
         <nav aria-label="Page navigation example">
           <ul className="pagination justify-content-center">
             <li className="page-item">
-              <a className="page-link" href="#">
+              <p className="page-link" href="#">
                 1
-              </a>
+              </p>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">
+              <p className="page-link" href="#">
                 2
-              </a>
+              </p>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">
+              <p className="page-link" href="#">
                 3
-              </a>
+              </p>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">
+              <p className="page-link" href="#">
                 Next
-              </a>
+              </p>
             </li>
           </ul>
         </nav>
