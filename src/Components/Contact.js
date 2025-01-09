@@ -11,7 +11,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="container-fluid" style={{ paddingTop: "60px" }}>
+    <div className="container-fluid px-0" style={{ paddingTop: "60px" }}>
       {/* Contact Header */}
       <section id="contact">
         <div className=" contact-h pt-4 bgimage">
@@ -20,7 +20,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <div className="contact-sec">
+      <div className="contact-sec px-0 pb-0">
         <div className="row">
           {/* Contact Info */}
           <div className="col-md-12 contact-info1">

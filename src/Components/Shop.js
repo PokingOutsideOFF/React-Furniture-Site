@@ -13,7 +13,7 @@ function Shop() {
     }, 3000);
   };
   return (
-    <div class="container-fluid" style={{ paddingTop: "60px" }}>
+    <div class="container-fluid px-0 " style={{ paddingTop: "60px" }}>
       {showAlert && (
         <div
           id="alertContainer"

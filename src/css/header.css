@@ -7,11 +7,11 @@ header {
   /* margin: 0 2em; */
   padding: 1.5em 5em 0.4em 3.8em;
   font-size: 0.9em;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
-  background-color: #fff;
-  z-index: 1000; /* Ensure it stays on top of other content */
+  background-color: #fff; /* Background color to avoid transparency */
+  z-index: 10000; /* Ensure it stays on top of other content */
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
