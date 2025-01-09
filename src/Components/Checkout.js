@@ -187,7 +187,7 @@ function Checkout() {
                 <table>
                   <tbody>
                     {cart.map((p) => (
-                      <tr className="text-left" key={p.id}>
+                      <tr className="text-left " key={p.id}>
                         <td>
                           <span className="product-name">
                             {p.product ? p.product.productName : "N/A"}

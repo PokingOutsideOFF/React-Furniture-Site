@@ -211,9 +211,31 @@
         "price": 7499
       },
       "quantity": 1,
-      "productId": 1,
-      "userId": 5,
-      "id": 10
+      "productId": "10",
+      "userId": "1",
+      "id": 1
+    },
+    {
+      "product": {
+        "productName": "Recliner",
+        "category": "Chair",
+        "price": 11999
+      },
+      "quantity": 1,
+      "productId": "4",
+      "userId": "1",
+      "id": 2
+    },
+    {
+      "product": {
+        "productName": "Long Sofa",
+        "category": "Sofa",
+        "price": 16499
+      },
+      "quantity": 1,
+      "productId": "2",
+      "userId": "1",
+      "id": 3
     }
   ]
 }
