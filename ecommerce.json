@@ -111,71 +111,122 @@
       "id": "4"
     },
     {
-      "id": "14b8",
-      "email": "sid@g.c",
-      "password": "Vansh@1234",
-      "fullName": "Siddhesh Chinchole",
-      "gender": "male",
-      "country": "Germany"
-    },
-    {
-      "id": "98ef",
-      "email": "van@g.com",
-      "password": "Vansh@1234",
-      "fullName": "Vansh P",
-      "gender": "male",
-      "country": "India"
-    },
-    {
-      "email": "va@v.com",
-      "password": "Vansh2011",
-      "fullName": "Vansh",
-      "gender": "male",
-      "country": "India",
-      "id": "eVnGYaA"
-    },
-    {
-      "email": "su@s.com",
-      "password": "Sudh2011",
-      "fullName": "Sudh",
-      "gender": "male",
-      "country": "India",
-      "id": "iExM4L9"
-    },
-    {
-      "email": "sh@s.com",
-      "password": "Shreyas2011",
-      "fullName": "Sh",
-      "gender": "male",
-      "country": "India",
-      "id": "ep8vtkX"
-    },
-    {
-      "email": "shre@gmail.com",
-      "password": "Shreyas2011",
-      "fullName": "ShreyasS",
-      "gender": "male",
-      "country": "India",
-      "id": "OVU5mrK"
-    },
-    {
-      "email": "v@a.com",
-      "password": "Vansh2011",
-      "fullName": "Vansh",
-      "gender": "male",
-      "country": "India",
-      "id": "KzZ_Vkv"
-    },
-    {
-      "email": "sudh@test.com",
-      "password": "Sudh2011",
+      "email": "sudh@g.com",
+      "password": "Sudhan123",
       "fullName": "Sudhanshu",
       "gender": "male",
       "country": "India",
-      "id": "ivOAzEU"
+      "id": "5"
+    },
+    {
+      "email": "v@gmail.com",
+      "password": "Vansh123",
+      "fullName": "Vansh",
+      "gender": "female",
+      "country": "USA",
+      "id": "6"
     }
   ],
   "orders": [
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": "3"
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": "4"
+    },
+    {
+      "product": {
+        "productName": "Dining Table",
+        "category": "Table",
+        "price": 18499
+      },
+      "quantity": 1,
+      "productId": 7,
+      "userId": 1,
+      "id": "5"
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": "6"
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": "7"
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": "8"
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": 1,
+      "userId": 1,
+      "id": "9"
+    },
+    {
+      "product": {
+        "productName": "Cushion Chair",
+        "category": "Chair",
+        "price": 7499
+      },
+      "quantity": 1,
+      "productId": "10",
+      "userId": "1",
+      "id": "1"
+    },
+    {
+      "product": {
+        "productName": "Recliner",
+        "category": "Chair",
+        "price": 11999
+      },
+      "quantity": 1,
+      "productId": "4",
+      "userId": "1",
+      "id": "2"
+    },
     {
       "product": {
         "productName": "Long Sofa",
@@ -185,7 +236,18 @@
       "quantity": 1,
       "productId": "2",
       "userId": "1",
-      "id": 4
+      "id": "3"
+    },
+    {
+      "product": {
+        "productName": "Queen Sized bed",
+        "category": "Bed",
+        "price": 27999
+      },
+      "quantity": 1,
+      "productId": 6,
+      "userId": 6,
+      "id": "11"
     },
     {
       "product": {
@@ -194,20 +256,20 @@
         "price": 7499
       },
       "quantity": 1,
-      "productId": "1",
-      "userId": "1",
-      "id": 5
+      "productId": 1,
+      "userId": 6,
+      "id": "12"
     },
     {
+      "id": "4c89",
       "product": {
-        "productName": "Study Table",
-        "category": "Table",
-        "price": 9999
+        "productName": "Long Sofa",
+        "category": "Sofa",
+        "price": 16499
       },
       "quantity": 1,
-      "productId": "8",
-      "userId": "1",
-      "id": 6
+      "productId": "2",
+      "userId": "1"
     }
   ]
 }

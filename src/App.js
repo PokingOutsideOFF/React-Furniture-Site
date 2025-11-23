@@ -57,7 +57,7 @@ function App() {
           />
           <div className="container-fluid px-0">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" exact element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/dashboard" element={<Dash />} />
               <Route path="/checkout" element={<Checkout />} />

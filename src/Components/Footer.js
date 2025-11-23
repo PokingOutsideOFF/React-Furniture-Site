@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/footer.css";
-import { Link } from "react-router-dom";
+
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -20,25 +21,25 @@ function Footer() {
               <div className="section">
                 <h3>LINKS</h3>
                 <p>
-                  <Link to="/dashboard"> Home </Link>
+                  <NavLink to="/dashboard"> Home </NavLink>
                 </p>
                 <p>
-                  <Link href="/shop"> Shop </Link>
+                  <NavLink to="/shop"> Shop </NavLink>
                 </p>
                 <p>
-                  <Link href="/contact"> Contact </Link>
+                  <NavLink to="/contact"> Contact </NavLink>
                 </p>
               </div>
               <div className="section">
                 <h3>HELP</h3>
                 <p>
-                  <a href="#">Payment Options</a>
+                  <NavLink to="/2">Payment Options</NavLink>
                 </p>
                 <p>
-                  <a href="#">Returns</a>
+                  <NavLink to="/2">Returns</NavLink>
                 </p>
                 <p>
-                  <a href="#">Privacy Policies</a>
+                  <NavLink to="/2">Privacy Policies</NavLink>
                 </p>
               </div>
               <div className="section">
